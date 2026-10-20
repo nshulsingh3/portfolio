@@ -42,14 +42,14 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="dark h-full antialiased scroll-smooth">
+    <html lang="en" className="dark h-full antialiased scroll-smooth w-full max-w-[100vw] overflow-x-hidden">
       <head>
         <style
           id="portfolio-critical-css"
           dangerouslySetInnerHTML={{ __html: INLINE_STYLES }}
         />
       </head>
-      <body className="min-h-full flex flex-col bg-[#07090e] text-[#e2e8f0] selection:bg-cyan-500/30 selection:text-cyan-200">
+      <body className="min-h-full flex flex-col bg-[#07090e] text-[#e2e8f0] selection:bg-cyan-500/30 selection:text-cyan-200 w-full max-w-[100vw] overflow-x-hidden relative">
         {children}
       </body>
     </html>

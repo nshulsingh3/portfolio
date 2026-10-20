@@ -2,6 +2,7 @@
 
 import React from "react";
 import { PERSONAL_INFO } from "@/data/portfolioData";
+import { downloadResumeFile } from "@/utils/downloadResume";
 import {
   Sparkles,
   ArrowRight,
@@ -25,10 +26,10 @@ interface HeroProps {
 
 export default function Hero({ onOpenWaitlist, onOpenResume }: HeroProps) {
   return (
-    <section className="relative pt-32 pb-20 md:pt-40 md:pb-28 overflow-hidden bg-grid-pattern">
+    <section className="relative pt-32 pb-20 md:pt-40 md:pb-28 overflow-hidden overflow-x-clip bg-grid-pattern w-full max-w-[100vw]">
       {/* Background radial glow accents & smooth edge fade */}
-      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[650px] h-[350px] bg-gradient-to-tr from-cyan-600/15 via-blue-600/15 to-violet-600/15 blur-[120px] rounded-full pointer-events-none -z-10" />
-      <div className="absolute top-20 right-10 w-[280px] h-[280px] bg-cyan-500/10 blur-[90px] rounded-full pointer-events-none -z-10" />
+      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[90vw] max-w-[650px] h-[350px] bg-gradient-to-tr from-cyan-600/15 via-blue-600/15 to-violet-600/15 blur-[120px] rounded-full pointer-events-none -z-10" />
+      <div className="absolute top-20 right-4 sm:right-10 w-[240px] sm:w-[280px] h-[240px] sm:h-[280px] bg-cyan-500/10 blur-[90px] rounded-full pointer-events-none -z-10" />
       <div className="absolute inset-x-0 bottom-0 h-28 bg-gradient-to-t from-[#07090e] to-transparent pointer-events-none -z-10" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -36,15 +37,15 @@ export default function Hero({ onOpenWaitlist, onOpenResume }: HeroProps) {
           {/* Left Column: Positioning & Headlines */}
           <div className="lg:col-span-7 space-y-6">
             {/* Pill Eyebrow */}
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-slate-900/90 border border-cyan-500/30 shadow-sm text-xs text-slate-300">
-              <span className="flex h-2 w-2 rounded-full bg-cyan-400 animate-pulse" />
-              <span className="font-mono text-cyan-300 font-medium">Enterprise Agentic AI & Full-Stack</span>
-              <span className="text-slate-600">|</span>
-              <span className="text-slate-400">Senior Systems Specialist</span>
+            <div className="inline-flex max-w-full flex-wrap sm:flex-nowrap items-center gap-1.5 sm:gap-2 px-3 py-1.5 rounded-2xl sm:rounded-full bg-slate-900/90 border border-cyan-500/30 shadow-sm text-xs text-slate-300">
+              <span className="flex h-2 w-2 rounded-full bg-cyan-400 animate-pulse shrink-0" />
+              <span className="font-mono text-cyan-300 font-medium whitespace-nowrap">Enterprise Agentic AI</span>
+              <span className="text-slate-600 hidden sm:inline">|</span>
+              <span className="text-slate-400 text-[11px] sm:text-xs">Senior Systems Specialist</span>
             </div>
 
             {/* Main Headline */}
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white leading-[1.12]">
+            <h1 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white leading-[1.15] break-words">
               Architecting Enterprise{" "}
               <span className="text-gradient-cyan block sm:inline">
                 Agentic AI & High-Performance
@@ -53,7 +54,7 @@ export default function Hero({ onOpenWaitlist, onOpenResume }: HeroProps) {
             </h1>
 
             {/* Sub-headline description */}
-            <p className="text-base sm:text-lg text-slate-300 max-w-2xl leading-relaxed">
+            <p className="text-sm sm:text-lg text-slate-300 max-w-2xl leading-relaxed break-words">
               5 years of production engineering at Accenture delivering scalable multi-agent systems,
               real-time WebSocket event streams, and sub-second React platforms. Proven record cutting
               API traffic by 50%, eliminating 80% of unnecessary UI re-renders, and automating workflows
@@ -85,8 +86,9 @@ export default function Hero({ onOpenWaitlist, onOpenResume }: HeroProps) {
               </a>
 
               <a
-                href="/Anshul_Singh_Resume.pdf"
+                href="/api/download-resume"
                 download="Anshul_Singh_Resume.pdf"
+                onClick={(e) => downloadResumeFile(e)}
                 className="inline-flex items-center justify-center gap-2 px-4 py-3.5 rounded-xl text-sm font-medium text-slate-300 hover:text-white bg-slate-900/60 hover:bg-slate-800/80 border border-slate-800 hover:border-cyan-500/30 transition-all cursor-pointer"
               >
                 <Download className="w-4 h-4 text-cyan-400" />
@@ -172,21 +174,21 @@ export default function Hero({ onOpenWaitlist, onOpenResume }: HeroProps) {
                 </div>
 
                 {/* Simulated Terminal Trace snippet */}
-                <div className="rounded-xl bg-black/60 p-3.5 border border-slate-800 font-mono text-[11px] space-y-1.5 text-slate-400">
+                <div className="rounded-xl bg-black/60 p-3.5 border border-slate-800 font-mono text-[11px] space-y-1.5 text-slate-400 break-words overflow-hidden">
                   <div className="text-cyan-400 flex items-center justify-between">
                     <span>$ agent.trace --watch</span>
                     <span className="text-[10px] text-slate-500">LIVE</span>
                   </div>
-                  <div className="text-slate-300">
+                  <div className="text-slate-300 break-words">
                     <span className="text-emerald-400">✓</span> [LangGraph] Node: "PlannerAgent" completed in 42ms
                   </div>
-                  <div className="text-slate-300">
+                  <div className="text-slate-300 break-words">
                     <span className="text-emerald-400">✓</span> [WebSocket] Dispatched 5+ service events (0 drops)
                   </div>
-                  <div className="text-cyan-300">
+                  <div className="text-cyan-300 break-words">
                     <span className="text-blue-400">ℹ</span> [BlockNote] Custom clause inserted into contract schema
                   </div>
-                  <div className="text-slate-500">
+                  <div className="text-slate-500 break-words">
                     Ready for real-time customer demos (slated Q4 deployment)
                   </div>
                 </div>

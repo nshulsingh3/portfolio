@@ -42,7 +42,7 @@ const statusColors: Record<string, { bg: string; text: string; dot: string; bord
 
 export default function UpcomingDemosSection({ onOpenWaitlistForDemo }: UpcomingDemosSectionProps) {
   return (
-    <section id="upcoming-demos" className="py-24 relative bg-[#090d16] border-y border-slate-800/80">
+    <section id="upcoming-demos" className="py-24 relative bg-[#090d16] border-y border-slate-800/80 overflow-x-clip">
       {/* Decorative background grid and lighting with smooth radial & edge fading */}
       <div
         className="absolute inset-0 bg-dot-matrix opacity-35 pointer-events-none"
@@ -53,24 +53,24 @@ export default function UpcomingDemosSection({ onOpenWaitlistForDemo }: Upcoming
       />
       <div className="absolute inset-x-0 top-0 h-24 bg-gradient-to-b from-[#07090e] to-transparent pointer-events-none" />
       <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-[#07090e] to-transparent pointer-events-none" />
-      <div className="absolute top-1/4 right-10 w-[450px] h-[300px] bg-cyan-500/10 blur-[130px] rounded-full pointer-events-none" />
+      <div className="absolute top-1/4 right-10 w-[90vw] max-w-[450px] h-[300px] bg-cyan-500/10 blur-[130px] rounded-full pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
         {/* Section Header */}
         <div className="max-w-3xl mb-14 space-y-4">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-950/60 border border-cyan-800/60 text-cyan-300 text-xs font-mono">
-            <Clock className="w-3.5 h-3.5 animate-spin" style={{ animationDuration: "8s" }} />
+            <Clock className="w-3.5 h-3.5 animate-spin shrink-0" style={{ animationDuration: "8s" }} />
             <span>Interactive Engineering Lab • Launching Next Few Weeks</span>
           </div>
 
-          <h2 className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight leading-tight">
+          <h2 className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight leading-tight break-words">
             Upcoming Real-Time Demos
             <span className="block text-gradient-cyan text-xl sm:text-2xl font-bold mt-1.5">
               Interactive Production Sandboxes
             </span>
           </h2>
 
-          <p className="text-base text-slate-300 leading-relaxed">
+          <p className="text-base text-slate-300 leading-relaxed break-words">
             I am currently packaging my enterprise-grade architectures into standalone, live interactive browser
             sandboxes scheduled for rollout over the next 2 to 3 weeks. You can preview the technical
             specifications below and join the priority access list to test them live upon release.
@@ -79,10 +79,10 @@ export default function UpcomingDemosSection({ onOpenWaitlistForDemo }: Upcoming
           {/* Staging status callout banner */}
           <div className="p-4 rounded-xl bg-slate-900/90 border border-slate-800 flex flex-col sm:flex-row sm:items-center justify-between gap-4 font-mono text-xs">
             <div className="flex items-center gap-2.5 text-slate-300">
-              <span className="w-2.5 h-2.5 rounded-full bg-cyan-400 animate-pulse" />
-              <span>Current Status: 4 Live Workflows undergoing stress-testing & UI hardening</span>
+              <span className="w-2.5 h-2.5 rounded-full bg-cyan-400 animate-pulse shrink-0" />
+              <span className="break-words">Current Status: 4 Live Workflows undergoing stress-testing & UI hardening</span>
             </div>
-            <div className="text-slate-400 flex items-center gap-2">
+            <div className="text-slate-400 flex items-center gap-2 shrink-0">
               <span className="text-cyan-400 font-semibold">Target Rollout:</span>
               <span>Next Few Weeks</span>
             </div>

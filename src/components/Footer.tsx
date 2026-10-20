@@ -3,6 +3,7 @@
 import React, { useState, useEffect } from "react";
 import { PERSONAL_INFO } from "@/data/portfolioData";
 import { ArrowUp, Terminal, Heart, Clock } from "lucide-react";
+import { downloadResumeFile } from "@/utils/downloadResume";
 
 export default function Footer() {
   const [time, setTime] = useState("");
@@ -58,9 +59,10 @@ export default function Footer() {
           {/* Right: Back to top & copyright */}
           <div className="flex items-center gap-4">
             <a
-              href="/Anshul_Singh_Resume.pdf"
+              href="/api/download-resume"
               download="Anshul_Singh_Resume.pdf"
-              className="text-cyan-400 hover:text-cyan-300 transition-colors"
+              onClick={(e) => downloadResumeFile(e)}
+              className="text-cyan-400 hover:text-cyan-300 transition-colors cursor-pointer"
             >
               Download Resume (PDF)
             </a>

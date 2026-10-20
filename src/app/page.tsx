@@ -30,7 +30,7 @@ export default function Home() {
   };
 
   return (
-    <main className="min-h-screen bg-[#07090e] text-slate-100 flex flex-col selection:bg-cyan-500/30 selection:text-cyan-200">
+    <main className="min-h-screen bg-[#07090e] text-slate-100 flex flex-col w-full max-w-[100vw] overflow-x-clip selection:bg-cyan-500/30 selection:text-cyan-200">
       {/* Sticky Header Navigation */}
       <Navbar
         onOpenResume={() => setIsResumeOpen(true)}

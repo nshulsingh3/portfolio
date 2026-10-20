@@ -3,6 +3,7 @@
 import React, { useEffect } from "react";
 import { PERSONAL_INFO } from "@/data/portfolioData";
 import { X, Printer, Download, ExternalLink } from "lucide-react";
+import { downloadResumeFile } from "@/utils/downloadResume";
 
 interface ResumeViewerModalProps {
   isOpen: boolean;
@@ -49,8 +50,9 @@ export default function ResumeViewerModal({ isOpen, onClose }: ResumeViewerModal
 
           <div className="flex items-center gap-2">
             <a
-              href="/Anshul_Singh_Resume.pdf"
+              href="/api/download-resume"
               download="Anshul_Singh_Resume.pdf"
+              onClick={(e) => downloadResumeFile(e)}
               className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold text-slate-950 bg-gradient-to-r from-cyan-400 to-sky-400 hover:from-cyan-300 hover:to-sky-300 transition-all shadow-sm shadow-cyan-500/20 cursor-pointer"
             >
               <Download className="w-3.5 h-3.5" />
