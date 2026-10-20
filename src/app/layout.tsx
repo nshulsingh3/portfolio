@@ -3,14 +3,13 @@ import { INLINE_STYLES } from "./inlineStyles";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Anshul Singh | Elite Full-Stack & GenAI Engineer",
+  title: "Anshul Singh | Senior Full-Stack & Agentic AI Engineer",
   description:
-    "Senior Full-Stack & Agentic AI Specialist. 5+ years architecting enterprise Agentic AI workflows, real-time event-driven architectures, and high-performance modern web platforms.",
+    "Senior Full-Stack & Agentic AI Engineer. 5 years at Accenture building multi-agent systems, real-time WebSocket pipelines and enterprise React apps.",
   keywords: [
     "Anshul Singh",
     "Agentic AI Engineer",
     "Full-Stack Developer",
-    "GenAI Architect",
     "LangGraph",
     "Google ADK",
     "React 19",
@@ -21,11 +20,17 @@ export const metadata: Metadata = {
   ],
   authors: [{ name: "Anshul Singh", url: "https://github.com/nshulsingh3" }],
   openGraph: {
-    title: "Anshul Singh | Elite Full-Stack & GenAI Engineer",
+    title: "Anshul Singh | Senior Full-Stack & Agentic AI Engineer",
     description:
-      "Enterprise Agentic AI workflows, real-time event-driven systems, and high-performance full-stack web architectures.",
+      "5 years at Accenture building multi-agent systems, real-time WebSocket pipelines and enterprise React apps.",
     type: "website",
     locale: "en_US",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Anshul Singh | Senior Full-Stack & Agentic AI Engineer",
+    description:
+      "5 years at Accenture building multi-agent systems, real-time WebSocket pipelines and enterprise React apps.",
   },
 };
 

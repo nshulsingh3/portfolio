@@ -3,64 +3,36 @@
 import React, { useState } from "react";
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
-import StatsBar from "@/components/StatsBar";
-import ServicesSection from "@/components/ServicesSection";
-import UpcomingDemosSection from "@/components/UpcomingDemosSection";
-import CaseStudiesSection from "@/components/CaseStudiesSection";
-import SkillsMatrix from "@/components/SkillsMatrix";
-import CertificationsAwards from "@/components/CertificationsAwards";
-import EngagementProcess from "@/components/EngagementProcess";
+import SelectedWork from "@/components/SelectedWork";
+import CapabilitiesSection from "@/components/CapabilitiesSection";
+import StackCredentials from "@/components/StackCredentials";
 import ContactSection from "@/components/ContactSection";
 import Footer from "@/components/Footer";
 import ResumeViewerModal from "@/components/ResumeViewerModal";
 
 export default function Home() {
   const [isResumeOpen, setIsResumeOpen] = useState(false);
-  const [selectedServiceForInquiry, setSelectedServiceForInquiry] = useState<string | undefined>(
-    undefined
-  );
-
-  const handleSelectService = (serviceName: string) => {
-    setSelectedServiceForInquiry(serviceName);
-    // Smooth scroll to contact section
-    const contactElem = document.getElementById("contact");
-    if (contactElem) {
-      contactElem.scrollIntoView({ behavior: "smooth" });
-    }
-  };
 
   return (
-    <main className="min-h-screen bg-[#07090e] text-slate-100 flex flex-col w-full max-w-[100vw] overflow-x-clip selection:bg-cyan-500/30 selection:text-cyan-200">
+    <main className="min-h-[100dvh] bg-[#07090e] text-slate-100 flex flex-col w-full max-w-[100vw] overflow-x-clip selection:bg-cyan-500/30 selection:text-cyan-200">
       {/* Sticky Header Navigation */}
       <Navbar
         onOpenResume={() => setIsResumeOpen(true)}
       />
 
-      {/* Hero Section */}
+      {/* Screen 1: Hero Section */}
       <Hero
         onOpenResume={() => setIsResumeOpen(true)}
       />
 
-      {/* Quantitative Impact Statistics */}
-      <StatsBar />
+      {/* Screen 2: Selected Work (#work, alias #case-studies) */}
+      <SelectedWork />
 
-      {/* Core Professional Services */}
-      <ServicesSection onSelectService={handleSelectService} />
+      {/* Screen 3: What I Build (#capabilities, alias #services, #upcoming-demos) */}
+      <CapabilitiesSection />
 
-      {/* Upcoming Real-time Demos Minimalist Cards */}
-      <UpcomingDemosSection />
-
-      {/* Enterprise Case Studies & Track Record */}
-      <CaseStudiesSection />
-
-      {/* Skills Matrix & Arsenal */}
-      <SkillsMatrix />
-
-      {/* Certifications & Awards */}
-      <CertificationsAwards />
-
-      {/* Engagement Process (How We Work) */}
-      <EngagementProcess />
+      {/* Screen 4: Stack & Credentials (#credentials, alias #skills) */}
+      <StackCredentials />
 
       {/* Contact & Direct Cal.com Scheduling */}
       <ContactSection />

@@ -65,17 +65,16 @@ export interface Award {
 
 export const PERSONAL_INFO = {
   name: "Anshul Singh",
-  title: "Elite Full-Stack & GenAI Engineer",
+  title: "Senior Full-Stack & Agentic AI Engineer",
   subtitle: "Specializing in Agentic AI Workflows, Real-Time Event-Driven Systems & Core Web Vitals Optimization",
   location: "Noida, Uttar Pradesh, India",
   email: "reachouttoanshul@gmail.com",
-  phone: "+91 8630448790",
   github: "https://github.com/nshulsingh3",
   linkedin: "https://linkedin.com/in/anshul-singh03",
   calCom: "https://cal.com/anshul-singh-tqhxbm",
   availabilityStatus: "Available for Q4/Q1 Strategic Engagements & Advisory",
   yearsOfExperience: "5+",
-  bio: "Full-stack engineer with 5 years of experience delivering scalable Agentic AI and GenAI-integrated applications, enterprise RAG pipelines, and sub-second real-time event-driven systems. Specializing in taking ambitious AI concepts from prototype to robust, production-grade enterprise software with measurable performance gains.",
+  bio: "Full-stack engineer with 5 years of experience delivering scalable Agentic AI and GenAI-integrated applications, enterprise RAG pipelines, and sub-second real-time event-driven systems. Specializing in taking ambitious AI concepts from prototype to resilient, production-grade enterprise software with measurable performance gains.",
 };
 
 export const IMPACT_METRICS = [
@@ -94,14 +93,14 @@ export const SERVICES: ServiceItem[] = [
     badge: "Enterprise AI",
     tagline: "Autonomous multi-agent workflows, production RAG pipelines, and conversational copilots.",
     description:
-      "Design and deploy production-grade Agentic workflows using LangGraph, Google ADK, CrewAI, and Microsoft Agent Framework. Bridging LLM intelligence with real-world tool execution, state persistence, and streaming conversational UIs.",
+      "Autonomous multi-agent workflows and retrieval-augmented generation built with Microsoft Agent Framework, Azure AI Foundry, and LangGraph. Implementations include structured tool calling, state persistence, and Python backend services.",
     deliverables: [
       "Multi-agent task orchestration & tool calling graphs",
       "Low-latency streaming copilot UIs (WebSockets / SSE)",
-      "Production RAG architectures with hybrid vector search",
+      "RAG architectures with hybrid vector search",
       "Prompt engineering, evaluation harnesses & guardrails",
     ],
-    techStack: ["LangGraph", "Google ADK", "CrewAI", "FastAPI", "Python", "Supabase", "TypeScript"],
+    techStack: ["Microsoft Agent Framework", "Azure AI Foundry", "LangGraph", "RAG", "Python"],
     idealFor: "Founders and enterprise product teams building domain-specific AI copilots, automated assistants, or intelligent multi-step agents.",
   },
   {
@@ -110,7 +109,7 @@ export const SERVICES: ServiceItem[] = [
     badge: "Sub-Second Latency",
     tagline: "Bi-directional WebSocket pipelines, streaming state sync, and live telemetry feeds.",
     description:
-      "Architect resilient event-driven systems connecting multiple distributed microservices to high-speed reactive frontends. Experience pioneering unified WebSocket notification systems across 5+ services with zero packet drops.",
+      "Bidirectional WebSocket pipelines connecting distributed microservices to reactive client applications. Includes reconnection state reconciliation and event broadcasting across multiple services with no dropped messages in production.",
     deliverables: [
       "Unified WebSocket broadcast & subscription architecture",
       "Optimistic UI updates & graceful reconnection logic",
@@ -124,9 +123,9 @@ export const SERVICES: ServiceItem[] = [
     id: "performance-optimization",
     title: "Core Web Vitals & Performance Audits",
     badge: "Sub-Second Speed",
-    tagline: "Eliminating bottlenecks, slashing API roundtrips, and maximizing Lighthouse scores.",
+    tagline: "Reducing bottlenecks, reducing API roundtrips, and maximizing Lighthouse scores.",
     description:
-      "Deep frontend performance tuning that turns sluggish dashboards into lightning-fast experiences. Proven track record reducing API traffic by 50% and cutting re-renders by 80% through modern cache invalidation and bundle optimization.",
+      "Frontend performance profiling and data layer optimization using Chrome DevTools and Lighthouse. Reduces redundant network requests through normalized RTK Query caching and cuts UI re-renders with React concurrency.",
     deliverables: [
       "Comprehensive Core Web Vitals audit (LCP, INP, CLS)",
       "Data layer migration to RTK Query / TanStack Query with normalized cache",
@@ -142,12 +141,12 @@ export const SERVICES: ServiceItem[] = [
     badge: "Frontend Craft",
     tagline: "Custom block-based text editors, visual node graphs, and bespoke media players.",
     description:
-      "Building tailored UI components that off-the-shelf component libraries cannot provide. From BlockNote-powered document automation to ReactFlow workflow inspectors and high-performance video players for 500+ moderators.",
+      "Custom UI engineering for complex workflows, including block-based document editors, node visualizers, and frame-accurate video players. Built with BlockNote, ReactFlow, and accessible component architectures tailored to enterprise operations.",
     deliverables: [
       "Custom block-based WYSIWYG editors with clause injection",
       "Interactive node-based workflow visualizers (ReactFlow + Framer)",
       "Accessible multi-theme design systems (TailwindCSS, Shadcn, MUI)",
-      "High-performance video/media players with frame-accurate seek controls",
+      "Video and media players with frame-accurate seek controls",
     ],
     techStack: ["BlockNote", "ReactFlow", "Framer Motion", "TailwindCSS", "Shadcn/ui", "Material-UI"],
     idealFor: "Companies needing specialized internal tools, workflow orchestrators, or signature consumer-facing interaction design.",
@@ -158,7 +157,7 @@ export const SERVICES: ServiceItem[] = [
     badge: "Scale & Reliability",
     tagline: "Upgrading legacy React apps, accelerating deployments, and establishing dev standards.",
     description:
-      "Guiding teams through major framework upgrades and DevOps streamlining. Led React 16 to 18 enterprise migrations, slashed deployment turnaround times by 75%, and instituted automated testing and CI/CD pipelines.",
+      "Framework upgrades and deployment pipeline automation for legacy codebases. Upgraded enterprise applications from React 16 to 18 while establishing automated CI/CD pipelines with Azure DevOps and GitHub Actions.",
     deliverables: [
       "React 16/17 to 18/19 step-by-step migration plans",
       "Automated CI/CD pipeline configuration (Azure DevOps / GitHub Actions)",
@@ -257,8 +256,8 @@ export const CASE_STUDIES: CaseStudy[] = [
   {
     id: "case-copilot-assistant",
     client: "Enterprise AI Initiative (Accenture)",
-    role: "Senior Analyst — Lead Frontend & Agentic Systems",
-    period: "Sept 2025 – Present",
+    role: "Senior Analyst | Lead Frontend & Agentic Systems",
+    period: "Sept 2025 - Present",
     title: "Enterprise Copilot AI Assistant & Visual Workflow Orchestration",
     category: "Agentic AI / Frontend Architecture",
     metrics: [
@@ -267,7 +266,7 @@ export const CASE_STUDIES: CaseStudy[] = [
       { label: "Streaming Latency", value: "<150ms" },
     ],
     overview:
-      "Engineered a high-performance Copilot-style AI assistant and interactive agent orchestration viewer for enterprise operations, enabling teams to automate document handling and visually debug complex multi-step AI workflows.",
+      "Engineered a Copilot-style AI assistant and interactive agent orchestration viewer for enterprise operations, enabling teams to automate document handling and visually debug complex multi-step AI workflows.",
     challenges: [
       "Maintaining state synchronization across long-running multi-agent reasoning steps without UI freezes.",
       "Providing intuitive visibility into complex AI workflows for non-technical enterprise stakeholders.",
@@ -277,20 +276,20 @@ export const CASE_STUDIES: CaseStudy[] = [
       "Engineered frontend streaming architecture using TypeScript, TailwindCSS, and shadcn/ui over low-latency WebSockets.",
       "Constructed a ReactFlow + Framer Motion animation viewer to visualize dynamic agentic workflows and tool invocations.",
       "Extended BlockNote editor with custom clause insertion, automating invoice handling for 1,000+ monthly documents.",
-      "Delivered a unified document viewer supporting DOCX, PDF, and high-resolution images for 3,000+ users.",
+      "Delivered a unified document viewer supporting DOCX, PDF, and high-resolution images built for 3,000+ target users.",
     ],
     results: [
       "Achieved sub-150ms initial token streaming response times for enterprise copilot sessions.",
-      "Eliminated manual drafting errors on 1,000+ invoices per month through standardized clause templates.",
-      "Adopted across multiple internal departments as the gold-standard AI copilot reference architecture.",
+      "Reduced drafting errors on 1,000+ monthly invoices through standardized clause templates.",
+      "Adopted across multiple internal departments as the reference architecture.",
     ],
     techStack: ["TypeScript", "TailwindCSS", "shadcn/ui", "WebSockets", "ReactFlow", "Framer Motion", "BlockNote", "Kiro"],
   },
   {
     id: "case-realtime-moderation",
     client: "Global Content Moderation Platform (Accenture)",
-    role: "Analyst — Full-Stack & Real-Time Lead",
-    period: "Sept 2022 – Aug 2025",
+    role: "Analyst | Full-Stack & Real-Time Lead",
+    period: "Sept 2022 - Aug 2025",
     title: "Multi-Service WebSocket Pipeline & AI Moderation Suite",
     category: "Real-Time Systems / Performance",
     metrics: [
@@ -322,17 +321,17 @@ export const CASE_STUDIES: CaseStudy[] = [
   {
     id: "case-react-modernization",
     client: "Core Platform Modernization (Accenture)",
-    role: "Associate — Frontend & DevOps Specialist",
-    period: "Aug 2021 – Aug 2022",
+    role: "Associate | Frontend & DevOps Specialist",
+    period: "Aug 2021 - Aug 2022",
     title: "Enterprise React 18 Migration & Deployment Pipeline Optimization",
     category: "Architecture & DevOps",
     metrics: [
-      { label: "Re-render Drop", value: "80%" },
+      { label: "UI re-renders cut", value: "80%" },
       { label: "Deploy Time Cut", value: "75%" },
       { label: "Records Handled", value: "2,000+" },
     ],
     overview:
-      "Led technical execution for migrating core enterprise applications from React 16 to React 18, eliminating severe rendering bottlenecks and streamlining cross-team CI/CD pipelines.",
+      "Led technical execution for migrating core enterprise applications from React 16 to React 18, reducing render bottlenecks and streamlining cross-team CI/CD pipelines.",
     challenges: [
       "Legacy React 16 codebase with deep prop drilling, cascading re-renders, and sluggish data table filtering.",
       "Fragmented pagination and tag filtering logic causing severe UI freezes when loading 2,000+ records.",
@@ -421,7 +420,7 @@ export const CERTIFICATIONS: Certification[] = [
     title: "Google Generative AI Leader",
     issuer: "Google",
     date: "Certified",
-    badgeColor: "from-blue-500 to-emerald-500",
+    badgeColor: "cyan",
     description: "Enterprise foundation models, multimodal prompting, Gemini API architectures, and responsible AI implementation.",
   },
   {
@@ -429,7 +428,7 @@ export const CERTIFICATIONS: Certification[] = [
     title: "Google Cloud Digital Leader",
     issuer: "Google",
     date: "Certified",
-    badgeColor: "from-blue-600 to-indigo-600",
+    badgeColor: "sky",
     description: "Core cloud infrastructure, data transformation, scalable cloud-native architectures, and security compliance.",
   },
   {
@@ -437,7 +436,7 @@ export const CERTIFICATIONS: Certification[] = [
     title: "Claude Certified Architect - Foundations",
     issuer: "Anthropic",
     date: "Certified",
-    badgeColor: "from-amber-500 to-orange-600",
+    badgeColor: "amber",
     description: "Architecting enterprise Claude models, long-context retrieval, prompt evaluation, and safe AI tooling.",
   },
   {
@@ -445,7 +444,7 @@ export const CERTIFICATIONS: Certification[] = [
     title: "GitHub Copilot Certified",
     issuer: "Microsoft",
     date: "Certified",
-    badgeColor: "from-purple-500 to-indigo-500",
+    badgeColor: "teal",
     description: "AI-assisted developer velocity, pairing workflows, automated test generation, and secure code crafting.",
   },
   {
@@ -453,7 +452,7 @@ export const CERTIFICATIONS: Certification[] = [
     title: "AZ-900 Azure Fundamentals",
     issuer: "Microsoft",
     date: "Certified",
-    badgeColor: "from-blue-500 to-cyan-500",
+    badgeColor: "sky",
     description: "Azure cloud computing concepts, security, governance, compute services, and enterprise architecture.",
   },
   {
@@ -461,7 +460,7 @@ export const CERTIFICATIONS: Certification[] = [
     title: "PL-900 Power Apps Fundamentals",
     issuer: "Microsoft",
     date: "Certified",
-    badgeColor: "from-teal-500 to-green-600",
+    badgeColor: "emerald",
     description: "Business automation, low-code integration frameworks, and enterprise data modeling.",
   },
 ];
@@ -495,28 +494,28 @@ export const AWARDS: Award[] = [
 
 export const ENGAGEMENT_PROCESS = [
   {
-    step: "01",
+    step: "Discovery",
     title: "Architecture & Needs Audit",
-    timeframe: "Days 1–3",
+    timeframe: "Days 1 - 3",
     description:
       "Deep-dive review into your existing tech stack, AI model requirements, latency bottlenecks, and business objectives. We map out data flows, agent graphs, and target SLAs.",
   },
   {
-    step: "02",
-    title: "Proof of Concept / Sprint Blueprint",
+    step: "Prototype",
+    title: "Sprint Architecture Blueprint",
     timeframe: "Week 1",
     description:
       "Deliver a concrete system architecture document, interface wireframes, and a working prototype proving core technical viability (e.g., streaming Copilot or WebSocket pipeline).",
   },
   {
-    step: "03",
-    title: "High-Velocity Production Build",
-    timeframe: "Weeks 2–4",
+    step: "Implementation",
+    title: "Production Engineering Build",
+    timeframe: "Weeks 2 - 4",
     description:
-      "Implementation of production-grade code, full TypeScript type safety, automated tests, responsive UI with shadcn/Tailwind, and low-latency API/agent integrations.",
+      "Implementation of production-grade code, full TypeScript type safety, automated tests, responsive UI, and low-latency API/agent integrations.",
   },
   {
-    step: "04",
+    step: "Delivery",
     title: "Hardening, Benchmarking & Handoff",
     timeframe: "Week 4+",
     description:

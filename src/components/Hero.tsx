@@ -3,230 +3,74 @@
 import React from "react";
 import { PERSONAL_INFO } from "@/data/portfolioData";
 import { downloadResumeFile } from "@/utils/downloadResume";
-import ScrollReveal from "@/components/ScrollReveal";
-import {
-  Sparkles,
-  ArrowRight,
-  ArrowUpRight,
-  Cpu,
-  Zap,
-  Activity,
-  Layers,
-  CheckCircle2,
-  ExternalLink,
-  ShieldCheck,
-  Terminal,
-  Download,
-  Calendar,
-} from "lucide-react";
+import { Download, Calendar, ArrowUpRight } from "lucide-react";
 
 interface HeroProps {
+  onOpenResume?: () => void;
   onOpenWaitlist?: () => void;
-  onOpenResume: () => void;
 }
 
-export default function Hero({ onOpenWaitlist, onOpenResume }: HeroProps) {
+export default function Hero({ onOpenResume }: HeroProps) {
   return (
-    <section className="relative pt-32 pb-20 md:pt-40 md:pb-28 overflow-hidden overflow-x-clip bg-grid-pattern w-full max-w-[100vw]">
-      {/* Background radial glow accents & smooth edge fade */}
-      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[90vw] max-w-[650px] h-[350px] bg-gradient-to-tr from-cyan-600/15 via-blue-600/15 to-violet-600/15 blur-[120px] rounded-full pointer-events-none -z-10" />
-      <div className="absolute top-20 right-4 sm:right-10 w-[240px] sm:w-[280px] h-[240px] sm:h-[280px] bg-cyan-500/10 blur-[90px] rounded-full pointer-events-none -z-10" />
-      <div className="absolute inset-x-0 bottom-0 h-28 bg-gradient-to-t from-[#07090e] to-transparent pointer-events-none -z-10" />
+    <section id="top" className="relative pt-28 pb-14 md:pt-36 md:pb-20 w-full overflow-x-clip">
+      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="space-y-6">
+          {/* Main Headline (2-line display title, rendered directly for optimal LCP) */}
+          <h1 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white leading-[1.1] sm:leading-[1.08] break-words">
+            Senior Full-Stack &<br />
+            Agentic AI Engineer.
+          </h1>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
-          {/* Left Column: Positioning & Headlines */}
-          <div className="lg:col-span-7 space-y-6">
-            {/* Pill Eyebrow */}
-            <ScrollReveal delay={50}>
-              <div className="inline-flex max-w-full flex-wrap sm:flex-nowrap items-center gap-1.5 sm:gap-2 px-3 py-1.5 rounded-2xl sm:rounded-full bg-slate-900/90 border border-cyan-500/30 shadow-sm text-xs text-slate-300">
-                <span className="flex h-2 w-2 rounded-full bg-cyan-400 animate-pulse shrink-0" />
-                <span className="font-mono text-cyan-300 font-medium whitespace-nowrap">Enterprise Agentic AI</span>
-                <span className="text-slate-600 hidden sm:inline">|</span>
-                <span className="text-slate-400 text-[11px] sm:text-xs">Senior Systems Specialist</span>
-              </div>
-            </ScrollReveal>
+          {/* Subtext (Factual, calm, exactly as specified) */}
+          <p className="text-base sm:text-lg text-slate-300 max-w-2xl leading-relaxed">
+            5 years at Accenture building multi-agent systems, real-time WebSocket pipelines and enterprise React apps.
+          </p>
 
-            {/* Main Headline */}
-            <ScrollReveal delay={120}>
-              <h1 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white leading-[1.15] break-words">
-                Architecting Enterprise{" "}
-                <span className="text-gradient-cyan block sm:inline">
-                  Agentic AI & High-Performance
-                </span>{" "}
-                Full-Stack Applications.
-              </h1>
-            </ScrollReveal>
+          {/* Primary Actions (Flat buttons, single radius scale: rounded-md, stack full-width on mobile) */}
+          <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 pt-2">
+            <a
+              href="/api/download-resume"
+              download="Anshul_Singh_Resume.pdf"
+              onClick={(e) => downloadResumeFile(e)}
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-md text-sm font-semibold text-slate-950 bg-cyan-400 hover:bg-cyan-300 transition-colors cursor-pointer"
+            >
+              <Download className="w-4 h-4" />
+              <span>Download CV</span>
+            </a>
 
-            {/* Sub-headline description */}
-            <ScrollReveal delay={200}>
-              <p className="text-sm sm:text-lg text-slate-300 max-w-2xl leading-relaxed break-words">
-                5 years of production engineering at Accenture delivering scalable multi-agent systems,
-                real-time WebSocket event streams, and sub-second React platforms. Proven record cutting
-                API traffic by 50%, eliminating 80% of unnecessary UI re-renders, and automating workflows
-                for thousands of enterprise users.
-              </p>
-            </ScrollReveal>
-
-            {/* Interactive CTAs */}
-            <ScrollReveal delay={280}>
-              <div className="flex flex-wrap items-center gap-3 pt-2">
-                <a
-                  href={PERSONAL_INFO.calCom}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl text-sm font-semibold text-slate-950 bg-gradient-to-r from-cyan-400 via-sky-400 to-blue-400 hover:from-cyan-300 hover:to-sky-300 transition-all shadow-lg shadow-cyan-500/20 hover:shadow-cyan-500/40 hover:-translate-y-0.5 cursor-pointer"
-                >
-                  <Calendar className="w-4 h-4" />
-                  <span>Book Architecture Review</span>
-                  <ArrowRight className="w-4 h-4" />
-                </a>
-
-                <a
-                  href="#upcoming-demos"
-                  className="inline-flex items-center justify-center gap-2 px-5 py-3.5 rounded-xl text-sm font-medium text-slate-200 bg-slate-900/80 hover:bg-slate-800/90 border border-slate-700/80 hover:border-cyan-500/40 transition-all hover:-translate-y-0.5 cursor-pointer"
-                >
-                  <Sparkles className="w-4 h-4 text-cyan-400" />
-                  <span>Upcoming Demos</span>
-                  <span className="ml-1 px-1.5 py-0.5 text-[10px] font-mono rounded bg-cyan-950 text-cyan-300 border border-cyan-800/50">
-                    New
-                  </span>
-                </a>
-
-                <a
-                  href="/api/download-resume"
-                  download="Anshul_Singh_Resume.pdf"
-                  onClick={(e) => downloadResumeFile(e)}
-                  className="inline-flex items-center justify-center gap-2 px-4 py-3.5 rounded-xl text-sm font-medium text-slate-300 hover:text-white bg-slate-900/60 hover:bg-slate-800/80 border border-slate-800 hover:border-cyan-500/30 transition-all cursor-pointer"
-                >
-                  <Download className="w-4 h-4 text-cyan-400" />
-                  <span>Download CV</span>
-                </a>
-              </div>
-            </ScrollReveal>
-
-            {/* Quick trust badges */}
-            <ScrollReveal delay={340}>
-              <div className="pt-4 flex flex-wrap items-center gap-y-2 gap-x-6 text-xs text-slate-400 font-mono">
-                <div className="flex items-center gap-1.5">
-                  <ShieldCheck className="w-4 h-4 text-emerald-400" />
-                  <span>Google & Anthropic Certified</span>
-                </div>
-                <div className="flex items-center gap-1.5">
-                  <CheckCircle2 className="w-4 h-4 text-cyan-400" />
-                  <span>3x Accenture ACE Honoree</span>
-                </div>
-                <div className="flex items-center gap-1.5">
-                  <Activity className="w-4 h-4 text-violet-400" />
-                  <span>3,000+ Enterprise Users</span>
-                </div>
-              </div>
-            </ScrollReveal>
+            <a
+              href={PERSONAL_INFO.calCom}
+              target="_blank"
+              rel="noreferrer"
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-md text-sm font-medium text-slate-200 bg-[#0c101a] hover:bg-[#111726] border border-white/10 hover:border-slate-600 transition-colors cursor-pointer"
+            >
+              <Calendar className="w-4 h-4 text-cyan-400" />
+              <span>Book a call</span>
+              <ArrowUpRight className="w-4 h-4 text-slate-400" />
+            </a>
           </div>
 
-          {/* Right Column: Live Telemetry & System Status Card */}
-          <div className="lg:col-span-5">
-            <ScrollReveal delay={200} direction="up">
-              <div className="relative mx-auto max-w-md lg:max-w-none">
-                {/* Glow border ring */}
-                <div className="absolute -inset-0.5 rounded-2xl bg-gradient-to-r from-cyan-500/40 via-blue-500/30 to-violet-500/40 blur-sm opacity-70 group-hover:opacity-100 transition duration-1000"></div>
-
-                <div className="relative rounded-2xl bg-[#0b0f19] border border-white/10 p-5 sm:p-6 shadow-2xl space-y-5">
-                {/* Header bar */}
-                <div className="flex items-center justify-between pb-3 border-b border-slate-800">
-                  <div className="flex items-center gap-2">
-                    <div className="w-3 h-3 rounded-full bg-rose-500/80" />
-                    <div className="w-3 h-3 rounded-full bg-amber-500/80" />
-                    <div className="w-3 h-3 rounded-full bg-emerald-500/80" />
-                    <span className="ml-2 text-xs font-mono text-slate-400">system.telemetry.active</span>
-                  </div>
-                  <span className="text-[11px] font-mono px-2 py-0.5 rounded bg-emerald-950/60 text-emerald-300 border border-emerald-800/40 flex items-center gap-1">
-                    <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
-                    HEALTHY 99.9%
-                  </span>
-                </div>
-
-                {/* Telemetry Metrics Grid */}
-                <div className="grid grid-cols-2 gap-3 font-mono text-xs">
-                  <div className="p-3 rounded-xl bg-slate-900/80 border border-slate-800">
-                    <div className="flex items-center gap-1.5 text-slate-400 mb-1">
-                      <Zap className="w-3.5 h-3.5 text-cyan-400" />
-                      <span>Stream Latency</span>
-                    </div>
-                    <div className="text-lg font-bold text-white">84 ms</div>
-                    <div className="text-[10px] text-emerald-400">WebSocket SSE Sub-second</div>
-                  </div>
-
-                  <div className="p-3 rounded-xl bg-slate-900/80 border border-slate-800">
-                    <div className="flex items-center gap-1.5 text-slate-400 mb-1">
-                      <Cpu className="w-3.5 h-3.5 text-violet-400" />
-                      <span>Agent Engine</span>
-                    </div>
-                    <div className="text-lg font-bold text-white">LangGraph</div>
-                    <div className="text-[10px] text-cyan-400">+ Google ADK / Kiro</div>
-                  </div>
-
-                  <div className="p-3 rounded-xl bg-slate-900/80 border border-slate-800">
-                    <div className="flex items-center gap-1.5 text-slate-400 mb-1">
-                      <Layers className="w-3.5 h-3.5 text-blue-400" />
-                      <span>API Traffic Cut</span>
-                    </div>
-                    <div className="text-lg font-bold text-emerald-400">-50%</div>
-                    <div className="text-[10px] text-slate-400">RTK Query Normalized</div>
-                  </div>
-
-                  <div className="p-3 rounded-xl bg-slate-900/80 border border-slate-800">
-                    <div className="flex items-center gap-1.5 text-slate-400 mb-1">
-                      <Activity className="w-3.5 h-3.5 text-amber-400" />
-                      <span>Re-render Drop</span>
-                    </div>
-                    <div className="text-lg font-bold text-emerald-400">-80%</div>
-                    <div className="text-[10px] text-slate-400">React 18 Concurrency</div>
-                  </div>
-                </div>
-
-                {/* Simulated Terminal Trace snippet */}
-                <div className="rounded-xl bg-black/60 p-3.5 border border-slate-800 font-mono text-[11px] space-y-1.5 text-slate-400 break-words overflow-hidden">
-                  <div className="text-cyan-400 flex items-center justify-between">
-                    <span>$ agent.trace --watch</span>
-                    <span className="text-[10px] text-slate-500">LIVE</span>
-                  </div>
-                  <div className="text-slate-300 break-words">
-                    <span className="text-emerald-400">✓</span> [LangGraph] Node: "PlannerAgent" completed in 42ms
-                  </div>
-                  <div className="text-slate-300 break-words">
-                    <span className="text-emerald-400">✓</span> [WebSocket] Dispatched 5+ service events (0 drops)
-                  </div>
-                  <div className="text-cyan-300 break-words">
-                    <span className="text-blue-400">ℹ</span> [BlockNote] Custom clause inserted into contract schema
-                  </div>
-                  <div className="text-slate-500 break-words">
-                    Ready for real-time customer demos (slated Q4 deployment)
-                  </div>
-                </div>
-
-                {/* Waitlist Callout Banner */}
-                <div className="p-3 rounded-xl bg-gradient-to-r from-cyan-950/40 to-blue-950/40 border border-cyan-800/40 flex items-center justify-between">
-                  <div className="text-xs">
-                    <span className="font-semibold text-white block">Real-Time Demos In Progress</span>
-                    <span className="text-slate-400 text-[11px]">Interactive sandboxes launching in 2-3 weeks</span>
-                  </div>
-                  <a
-                    href={PERSONAL_INFO.calCom}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="px-2.5 py-1.5 rounded-lg text-xs font-semibold bg-cyan-400 hover:bg-cyan-300 text-slate-950 transition-colors whitespace-nowrap cursor-pointer inline-flex items-center gap-1"
-                  >
-                    <span>Book Demo</span>
-                    <ArrowUpRight className="w-3 h-3" />
-                  </a>
-                </div>
-              </div>
+          {/* Proof Strip of 4 (Metrics appear ONLY here in the Hero) */}
+          <div data-ui="proof" className="grid grid-cols-2 sm:grid-cols-4 gap-6 sm:gap-8 pt-8 mt-6 border-t border-white/10">
+            <div>
+              <div className="text-2xl sm:text-3xl font-extrabold text-white tracking-tight">50%</div>
+              <div className="text-xs sm:text-sm text-slate-400 mt-1">API traffic cut</div>
             </div>
-          </ScrollReveal>
+            <div>
+              <div className="text-2xl sm:text-3xl font-extrabold text-white tracking-tight">&lt;150ms</div>
+              <div className="text-xs sm:text-sm text-slate-400 mt-1">Streaming latency</div>
+            </div>
+            <div>
+              <div className="text-2xl sm:text-3xl font-extrabold text-white tracking-tight">75%</div>
+              <div className="text-xs sm:text-sm text-slate-400 mt-1">Faster deploys</div>
+            </div>
+            <div>
+              <div className="text-2xl sm:text-3xl font-extrabold text-white tracking-tight">3x</div>
+              <div className="text-xs sm:text-sm text-slate-400 mt-1">Accenture awards</div>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
-  </section>
-);
+    </section>
+  );
 }

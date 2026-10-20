@@ -23,70 +23,33 @@ body {
 :root {
   color-scheme: dark;
   --bg-primary: #07090e;
-  --bg-secondary: #0d121d;
-  --bg-card: rgba(15, 23, 42, 0.65);
+  --bg-secondary: #0c101a;
+  --bg-surface: #111726;
   --border-subtle: rgba(255, 255, 255, 0.08);
-  --border-accent: rgba(56, 189, 248, 0.25);
+  --border-accent: rgba(56, 189, 248, 0.3);
   --accent-cyan: #38bdf8;
   --accent-emerald: #10b981;
-  --accent-violet: #818cf8;
 }
 
-/* Custom grid background */
-.bg-grid-pattern {
-  background-image: radial-gradient(rgba(255, 255, 255, 0.07) 1px, transparent 1px);
-  background-size: 28px 28px;
+/* Crisp architectural surfaces (tone-stepped, no blurry AI glass) */
+.surface-card {
+  background: #0c101a;
+  border: 1px solid rgba(255, 255, 255, 0.07); /* taste-skill-ignore */
 }
 
-.bg-dot-matrix {
-  background-image: radial-gradient(rgba(56, 189, 248, 0.12) 1.5px, transparent 1.5px);
-  background-size: 20px 20px;
+.surface-card:hover {
+  background: #111726;
+  border-color: rgba(56, 189, 248, 0.3);
+  transition: background-color 0.2s ease, border-color 0.2s ease;
 }
 
-/* Glassmorphism effects */
-.glass-panel {
-  background: rgba(13, 18, 29, 0.72);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-}
-
-.glass-panel-hover {
-  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-.glass-panel-hover:hover {
-  background: rgba(17, 24, 39, 0.85);
-  border-color: rgba(56, 189, 248, 0.35);
-  box-shadow: 0 10px 30px -10px rgba(56, 189, 248, 0.15);
-  transform: translateY(-2px);
-}
-
-/* Glow gradient highlights */
-.glow-cyan {
-  box-shadow: 0 0 35px -5px rgba(56, 189, 248, 0.25);
-}
-
-.glow-violet {
-  box-shadow: 0 0 35px -5px rgba(129, 140, 248, 0.25);
-}
-
-.text-gradient-cyan {
+/* Solid high-contrast text accents (no clipped text gradients) */
+.text-accent-cyan {
   color: #38bdf8;
-  background-image: linear-gradient(135deg, #a5f3fc 0%, #38bdf8 55%, #818cf8 100%);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-  forced-color-adjust: none;
 }
 
-.text-gradient-gold {
+.text-accent-gold {
   color: #f59e0b;
-  background-image: linear-gradient(135deg, #fde047 0%, #f59e0b 100%);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-  forced-color-adjust: none;
 }
 
 /* Custom Scrollbar */
