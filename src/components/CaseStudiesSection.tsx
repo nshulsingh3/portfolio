@@ -2,6 +2,7 @@
 
 import React, { useState } from "react";
 import { CASE_STUDIES, CaseStudy } from "@/data/portfolioData";
+import ScrollReveal from "@/components/ScrollReveal";
 import {
   Briefcase,
   ChevronDown,
@@ -26,19 +27,21 @@ export default function CaseStudiesSection() {
     <section id="case-studies" className="py-24 relative bg-[#07090e] overflow-x-clip">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
-        <div className="max-w-3xl mb-16 space-y-4">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-950/40 border border-cyan-800/40 text-cyan-300 text-xs font-mono">
-            <Briefcase className="w-3.5 h-3.5" />
-            <span>Proven Enterprise Track Record</span>
+        <ScrollReveal>
+          <div className="max-w-3xl mb-16 space-y-4">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-950/40 border border-cyan-800/40 text-cyan-300 text-xs font-mono">
+              <Briefcase className="w-3.5 h-3.5" />
+              <span>Proven Enterprise Track Record</span>
+            </div>
+            <h2 className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight break-words">
+              Featured Engineering Case Studies
+            </h2>
+            <p className="text-base text-slate-400 leading-relaxed break-words">
+              Real production challenges solved at enterprise scale at Accenture, powering mission-critical
+              operations, reducing infrastructure overhead, and delivering delightful, sub-second experiences.
+            </p>
           </div>
-          <h2 className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight break-words">
-            Featured Engineering Case Studies
-          </h2>
-          <p className="text-base text-slate-400 leading-relaxed break-words">
-            Real production challenges solved at enterprise scale at Accenture, powering mission-critical
-            operations, reducing infrastructure overhead, and delivering delightful, sub-second experiences.
-          </p>
-        </div>
+        </ScrollReveal>
 
         {/* Case Studies Accordion / Cards List */}
         <div className="space-y-8">
@@ -46,14 +49,14 @@ export default function CaseStudiesSection() {
             const isExpanded = expandedId === study.id;
 
             return (
-              <div
-                key={study.id}
-                className={`rounded-2xl border transition-all duration-300 overflow-hidden ${
-                  isExpanded
-                    ? "bg-[#0c101c] border-cyan-500/40 shadow-2xl shadow-cyan-950/30"
-                    : "bg-[#090d16] border-slate-800 hover:border-slate-700"
-                }`}
-              >
+              <ScrollReveal key={study.id} delay={index * 100} distance={24}>
+                <div
+                  className={`rounded-2xl border transition-all duration-300 overflow-hidden ${
+                    isExpanded
+                      ? "bg-[#0c101c] border-cyan-500/40 shadow-2xl shadow-cyan-950/30"
+                      : "bg-[#090d16] border-slate-800 hover:border-slate-700"
+                  }`}
+                >
                 {/* Main Card Header Bar (Clickable) */}
                 <div
                   onClick={() => toggleExpand(study.id)}
@@ -185,8 +188,9 @@ export default function CaseStudiesSection() {
                   </div>
                 )}
               </div>
-            );
-          })}
+            </ScrollReveal>
+          );
+        })}
         </div>
       </div>
     </section>

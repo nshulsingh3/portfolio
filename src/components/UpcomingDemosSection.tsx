@@ -2,6 +2,7 @@
 
 import React from "react";
 import { UPCOMING_DEMOS, UpcomingDemo, PERSONAL_INFO } from "@/data/portfolioData";
+import ScrollReveal from "@/components/ScrollReveal";
 import {
   Sparkles,
   Clock,
@@ -57,48 +58,50 @@ export default function UpcomingDemosSection({ onOpenWaitlistForDemo }: Upcoming
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
         {/* Section Header */}
-        <div className="max-w-3xl mb-14 space-y-4">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-950/60 border border-cyan-800/60 text-cyan-300 text-xs font-mono">
-            <Clock className="w-3.5 h-3.5 animate-spin shrink-0" style={{ animationDuration: "8s" }} />
-            <span>Interactive Engineering Lab • Launching Next Few Weeks</span>
-          </div>
-
-          <h2 className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight leading-tight break-words">
-            Upcoming Real-Time Demos
-            <span className="block text-gradient-cyan text-xl sm:text-2xl font-bold mt-1.5">
-              Interactive Production Sandboxes
-            </span>
-          </h2>
-
-          <p className="text-base text-slate-300 leading-relaxed break-words">
-            I am currently packaging my enterprise-grade architectures into standalone, live interactive browser
-            sandboxes scheduled for rollout over the next 2 to 3 weeks. You can preview the technical
-            specifications below and join the priority access list to test them live upon release.
-          </p>
-
-          {/* Staging status callout banner */}
-          <div className="p-4 rounded-xl bg-slate-900/90 border border-slate-800 flex flex-col sm:flex-row sm:items-center justify-between gap-4 font-mono text-xs">
-            <div className="flex items-center gap-2.5 text-slate-300">
-              <span className="w-2.5 h-2.5 rounded-full bg-cyan-400 animate-pulse shrink-0" />
-              <span className="break-words">Current Status: 4 Live Workflows undergoing stress-testing & UI hardening</span>
+        <ScrollReveal>
+          <div className="max-w-3xl mb-14 space-y-4">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-950/60 border border-cyan-800/60 text-cyan-300 text-xs font-mono">
+              <Clock className="w-3.5 h-3.5 animate-spin shrink-0" style={{ animationDuration: "8s" }} />
+              <span>Interactive Engineering Lab • Launching Next Few Weeks</span>
             </div>
-            <div className="text-slate-400 flex items-center gap-2 shrink-0">
-              <span className="text-cyan-400 font-semibold">Target Rollout:</span>
-              <span>Next Few Weeks</span>
+
+            <h2 className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight leading-tight break-words">
+              Upcoming Real-Time Demos
+              <span className="block text-gradient-cyan text-xl sm:text-2xl font-bold mt-1.5">
+                Interactive Production Sandboxes
+              </span>
+            </h2>
+
+            <p className="text-base text-slate-300 leading-relaxed break-words">
+              I am currently packaging my enterprise-grade architectures into standalone, live interactive browser
+              sandboxes scheduled for rollout over the next 2 to 3 weeks. You can preview the technical
+              specifications below and join the priority access list to test them live upon release.
+            </p>
+
+            {/* Staging status callout banner */}
+            <div className="p-4 rounded-xl bg-slate-900/90 border border-slate-800 flex flex-col sm:flex-row sm:items-center justify-between gap-4 font-mono text-xs">
+              <div className="flex items-center gap-2.5 text-slate-300">
+                <span className="w-2.5 h-2.5 rounded-full bg-cyan-400 animate-pulse shrink-0" />
+                <span className="break-words">Current Status: 4 Live Workflows undergoing stress-testing & UI hardening</span>
+              </div>
+              <div className="text-slate-400 flex items-center gap-2 shrink-0">
+                <span className="text-cyan-400 font-semibold">Target Rollout:</span>
+                <span>Next Few Weeks</span>
+              </div>
             </div>
           </div>
-        </div>
+        </ScrollReveal>
 
         {/* Minimalist Teaser Cards Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          {UPCOMING_DEMOS.map((demo) => {
+          {UPCOMING_DEMOS.map((demo, index) => {
             const statusConfig = statusColors[demo.status] || statusColors["In Development"];
 
             return (
-              <div
-                key={demo.id}
-                className="rounded-2xl bg-[#0c101a] border border-slate-800/90 hover:border-cyan-500/40 p-6 sm:p-8 flex flex-col justify-between transition-all duration-300 hover:shadow-2xl hover:shadow-cyan-950/20 group"
-              >
+              <ScrollReveal key={demo.id} delay={index * 90} distance={20} className="h-full">
+                <div
+                  className="rounded-2xl bg-[#0c101a] border border-slate-800/90 hover:border-cyan-500/40 p-6 sm:p-8 flex flex-col justify-between transition-all duration-300 hover:shadow-2xl hover:shadow-cyan-950/20 group h-full"
+                >
                 <div className="space-y-6">
                   {/* Status & Estimated Launch header */}
                   <div className="flex flex-wrap items-center justify-between gap-2">
@@ -192,8 +195,9 @@ export default function UpcomingDemosSection({ onOpenWaitlistForDemo }: Upcoming
                   </a>
                 </div>
               </div>
-            );
-          })}
+            </ScrollReveal>
+          );
+        })}
         </div>
       </div>
     </section>

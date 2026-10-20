@@ -3,6 +3,7 @@
 import React from "react";
 import { IMPACT_METRICS } from "@/data/portfolioData";
 import { TrendingDown, Users, Clock, Zap, FileSpreadsheet, Rocket } from "lucide-react";
+import ScrollReveal from "@/components/ScrollReveal";
 
 const statIcons: Record<string, React.ReactNode> = {
   "Years Experience": <Clock className="w-4 h-4 text-cyan-400" />,
@@ -15,31 +16,32 @@ const statIcons: Record<string, React.ReactNode> = {
 
 export default function StatsBar() {
   return (
-    <section className="py-12 border-y border-slate-800/80 bg-[#090d16]/60 backdrop-blur-sm relative">
+    <section className="py-12 border-y border-slate-800/80 bg-[#090d16]/60 backdrop-blur-sm relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6 lg:gap-4">
-          {IMPACT_METRICS.map((stat) => (
-            <div
-              key={stat.label}
-              className="p-4 rounded-xl bg-slate-900/40 border border-slate-800/60 hover:border-cyan-500/30 transition-all group flex flex-col justify-between"
-            >
-              <div>
-                <div className="flex items-center gap-1.5 mb-2 min-h-[1.5rem]">
-                  <span className="shrink-0">
-                    {statIcons[stat.label] || <Zap className="w-4 h-4 text-cyan-400" />}
-                  </span>
-                  <span className="text-[11px] font-mono text-slate-300 leading-snug whitespace-normal">
-                    {stat.label}
-                  </span>
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 sm:gap-6 lg:gap-4">
+          {IMPACT_METRICS.map((stat, index) => (
+            <ScrollReveal key={stat.label} delay={index * 60} distance={18}>
+              <div
+                className="p-4 rounded-xl bg-slate-900/40 border border-slate-800/60 hover:border-cyan-500/30 transition-all group flex flex-col justify-between h-full"
+              >
+                <div>
+                  <div className="flex items-center gap-1.5 mb-2 min-h-[1.5rem]">
+                    <span className="shrink-0">
+                      {statIcons[stat.label] || <Zap className="w-4 h-4 text-cyan-400" />}
+                    </span>
+                    <span className="text-[11px] font-mono text-slate-300 leading-snug whitespace-normal">
+                      {stat.label}
+                    </span>
+                  </div>
+                  <div className="text-2xl sm:text-3xl font-extrabold text-white tracking-tight group-hover:text-cyan-300 transition-colors">
+                    {stat.value}
+                  </div>
                 </div>
-                <div className="text-2xl sm:text-3xl font-extrabold text-white tracking-tight group-hover:text-cyan-300 transition-colors">
-                  {stat.value}
-                </div>
+                <p className="text-[11px] text-slate-400 mt-2 leading-tight">
+                  {stat.description}
+                </p>
               </div>
-              <p className="text-[11px] text-slate-400 mt-2 leading-tight">
-                {stat.description}
-              </p>
-            </div>
+            </ScrollReveal>
           ))}
         </div>
       </div>

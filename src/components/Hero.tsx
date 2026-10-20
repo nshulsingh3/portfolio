@@ -3,6 +3,7 @@
 import React from "react";
 import { PERSONAL_INFO } from "@/data/portfolioData";
 import { downloadResumeFile } from "@/utils/downloadResume";
+import ScrollReveal from "@/components/ScrollReveal";
 import {
   Sparkles,
   ArrowRight,
@@ -37,89 +38,100 @@ export default function Hero({ onOpenWaitlist, onOpenResume }: HeroProps) {
           {/* Left Column: Positioning & Headlines */}
           <div className="lg:col-span-7 space-y-6">
             {/* Pill Eyebrow */}
-            <div className="inline-flex max-w-full flex-wrap sm:flex-nowrap items-center gap-1.5 sm:gap-2 px-3 py-1.5 rounded-2xl sm:rounded-full bg-slate-900/90 border border-cyan-500/30 shadow-sm text-xs text-slate-300">
-              <span className="flex h-2 w-2 rounded-full bg-cyan-400 animate-pulse shrink-0" />
-              <span className="font-mono text-cyan-300 font-medium whitespace-nowrap">Enterprise Agentic AI</span>
-              <span className="text-slate-600 hidden sm:inline">|</span>
-              <span className="text-slate-400 text-[11px] sm:text-xs">Senior Systems Specialist</span>
-            </div>
+            <ScrollReveal delay={50}>
+              <div className="inline-flex max-w-full flex-wrap sm:flex-nowrap items-center gap-1.5 sm:gap-2 px-3 py-1.5 rounded-2xl sm:rounded-full bg-slate-900/90 border border-cyan-500/30 shadow-sm text-xs text-slate-300">
+                <span className="flex h-2 w-2 rounded-full bg-cyan-400 animate-pulse shrink-0" />
+                <span className="font-mono text-cyan-300 font-medium whitespace-nowrap">Enterprise Agentic AI</span>
+                <span className="text-slate-600 hidden sm:inline">|</span>
+                <span className="text-slate-400 text-[11px] sm:text-xs">Senior Systems Specialist</span>
+              </div>
+            </ScrollReveal>
 
             {/* Main Headline */}
-            <h1 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white leading-[1.15] break-words">
-              Architecting Enterprise{" "}
-              <span className="text-gradient-cyan block sm:inline">
-                Agentic AI & High-Performance
-              </span>{" "}
-              Full-Stack Applications.
-            </h1>
+            <ScrollReveal delay={120}>
+              <h1 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white leading-[1.15] break-words">
+                Architecting Enterprise{" "}
+                <span className="text-gradient-cyan block sm:inline">
+                  Agentic AI & High-Performance
+                </span>{" "}
+                Full-Stack Applications.
+              </h1>
+            </ScrollReveal>
 
             {/* Sub-headline description */}
-            <p className="text-sm sm:text-lg text-slate-300 max-w-2xl leading-relaxed break-words">
-              5 years of production engineering at Accenture delivering scalable multi-agent systems,
-              real-time WebSocket event streams, and sub-second React platforms. Proven record cutting
-              API traffic by 50%, eliminating 80% of unnecessary UI re-renders, and automating workflows
-              for thousands of enterprise users.
-            </p>
+            <ScrollReveal delay={200}>
+              <p className="text-sm sm:text-lg text-slate-300 max-w-2xl leading-relaxed break-words">
+                5 years of production engineering at Accenture delivering scalable multi-agent systems,
+                real-time WebSocket event streams, and sub-second React platforms. Proven record cutting
+                API traffic by 50%, eliminating 80% of unnecessary UI re-renders, and automating workflows
+                for thousands of enterprise users.
+              </p>
+            </ScrollReveal>
 
             {/* Interactive CTAs */}
-            <div className="flex flex-wrap items-center gap-3 pt-2">
-              <a
-                href={PERSONAL_INFO.calCom}
-                target="_blank"
-                rel="noreferrer"
-                className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl text-sm font-semibold text-slate-950 bg-gradient-to-r from-cyan-400 via-sky-400 to-blue-400 hover:from-cyan-300 hover:to-sky-300 transition-all shadow-lg shadow-cyan-500/20 hover:shadow-cyan-500/40 hover:-translate-y-0.5 cursor-pointer"
-              >
-                <Calendar className="w-4 h-4" />
-                <span>Book Architecture Review</span>
-                <ArrowRight className="w-4 h-4" />
-              </a>
+            <ScrollReveal delay={280}>
+              <div className="flex flex-wrap items-center gap-3 pt-2">
+                <a
+                  href={PERSONAL_INFO.calCom}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl text-sm font-semibold text-slate-950 bg-gradient-to-r from-cyan-400 via-sky-400 to-blue-400 hover:from-cyan-300 hover:to-sky-300 transition-all shadow-lg shadow-cyan-500/20 hover:shadow-cyan-500/40 hover:-translate-y-0.5 cursor-pointer"
+                >
+                  <Calendar className="w-4 h-4" />
+                  <span>Book Architecture Review</span>
+                  <ArrowRight className="w-4 h-4" />
+                </a>
 
-              <a
-                href="#upcoming-demos"
-                className="inline-flex items-center justify-center gap-2 px-5 py-3.5 rounded-xl text-sm font-medium text-slate-200 bg-slate-900/80 hover:bg-slate-800/90 border border-slate-700/80 hover:border-cyan-500/40 transition-all hover:-translate-y-0.5 cursor-pointer"
-              >
-                <Sparkles className="w-4 h-4 text-cyan-400" />
-                <span>Upcoming Demos</span>
-                <span className="ml-1 px-1.5 py-0.5 text-[10px] font-mono rounded bg-cyan-950 text-cyan-300 border border-cyan-800/50">
-                  New
-                </span>
-              </a>
+                <a
+                  href="#upcoming-demos"
+                  className="inline-flex items-center justify-center gap-2 px-5 py-3.5 rounded-xl text-sm font-medium text-slate-200 bg-slate-900/80 hover:bg-slate-800/90 border border-slate-700/80 hover:border-cyan-500/40 transition-all hover:-translate-y-0.5 cursor-pointer"
+                >
+                  <Sparkles className="w-4 h-4 text-cyan-400" />
+                  <span>Upcoming Demos</span>
+                  <span className="ml-1 px-1.5 py-0.5 text-[10px] font-mono rounded bg-cyan-950 text-cyan-300 border border-cyan-800/50">
+                    New
+                  </span>
+                </a>
 
-              <a
-                href="/api/download-resume"
-                download="Anshul_Singh_Resume.pdf"
-                onClick={(e) => downloadResumeFile(e)}
-                className="inline-flex items-center justify-center gap-2 px-4 py-3.5 rounded-xl text-sm font-medium text-slate-300 hover:text-white bg-slate-900/60 hover:bg-slate-800/80 border border-slate-800 hover:border-cyan-500/30 transition-all cursor-pointer"
-              >
-                <Download className="w-4 h-4 text-cyan-400" />
-                <span>Download CV</span>
-              </a>
-            </div>
+                <a
+                  href="/api/download-resume"
+                  download="Anshul_Singh_Resume.pdf"
+                  onClick={(e) => downloadResumeFile(e)}
+                  className="inline-flex items-center justify-center gap-2 px-4 py-3.5 rounded-xl text-sm font-medium text-slate-300 hover:text-white bg-slate-900/60 hover:bg-slate-800/80 border border-slate-800 hover:border-cyan-500/30 transition-all cursor-pointer"
+                >
+                  <Download className="w-4 h-4 text-cyan-400" />
+                  <span>Download CV</span>
+                </a>
+              </div>
+            </ScrollReveal>
 
             {/* Quick trust badges */}
-            <div className="pt-4 flex flex-wrap items-center gap-y-2 gap-x-6 text-xs text-slate-400 font-mono">
-              <div className="flex items-center gap-1.5">
-                <ShieldCheck className="w-4 h-4 text-emerald-400" />
-                <span>Google & Anthropic Certified</span>
+            <ScrollReveal delay={340}>
+              <div className="pt-4 flex flex-wrap items-center gap-y-2 gap-x-6 text-xs text-slate-400 font-mono">
+                <div className="flex items-center gap-1.5">
+                  <ShieldCheck className="w-4 h-4 text-emerald-400" />
+                  <span>Google & Anthropic Certified</span>
+                </div>
+                <div className="flex items-center gap-1.5">
+                  <CheckCircle2 className="w-4 h-4 text-cyan-400" />
+                  <span>3x Accenture ACE Honoree</span>
+                </div>
+                <div className="flex items-center gap-1.5">
+                  <Activity className="w-4 h-4 text-violet-400" />
+                  <span>3,000+ Enterprise Users</span>
+                </div>
               </div>
-              <div className="flex items-center gap-1.5">
-                <CheckCircle2 className="w-4 h-4 text-cyan-400" />
-                <span>3x Accenture ACE Honoree</span>
-              </div>
-              <div className="flex items-center gap-1.5">
-                <Activity className="w-4 h-4 text-violet-400" />
-                <span>3,000+ Enterprise Users</span>
-              </div>
-            </div>
+            </ScrollReveal>
           </div>
 
           {/* Right Column: Live Telemetry & System Status Card */}
           <div className="lg:col-span-5">
-            <div className="relative mx-auto max-w-md lg:max-w-none">
-              {/* Glow border ring */}
-              <div className="absolute -inset-0.5 rounded-2xl bg-gradient-to-r from-cyan-500/40 via-blue-500/30 to-violet-500/40 blur-sm opacity-70 group-hover:opacity-100 transition duration-1000"></div>
+            <ScrollReveal delay={200} direction="up">
+              <div className="relative mx-auto max-w-md lg:max-w-none">
+                {/* Glow border ring */}
+                <div className="absolute -inset-0.5 rounded-2xl bg-gradient-to-r from-cyan-500/40 via-blue-500/30 to-violet-500/40 blur-sm opacity-70 group-hover:opacity-100 transition duration-1000"></div>
 
-              <div className="relative rounded-2xl bg-[#0b0f19] border border-white/10 p-5 sm:p-6 shadow-2xl space-y-5">
+                <div className="relative rounded-2xl bg-[#0b0f19] border border-white/10 p-5 sm:p-6 shadow-2xl space-y-5">
                 {/* Header bar */}
                 <div className="flex items-center justify-between pb-3 border-b border-slate-800">
                   <div className="flex items-center gap-2">
@@ -211,9 +223,10 @@ export default function Hero({ onOpenWaitlist, onOpenResume }: HeroProps) {
                 </div>
               </div>
             </div>
-          </div>
+          </ScrollReveal>
         </div>
       </div>
-    </section>
-  );
+    </div>
+  </section>
+);
 }

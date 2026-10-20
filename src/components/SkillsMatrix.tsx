@@ -3,6 +3,7 @@
 import React, { useState } from "react";
 import { SKILL_CATEGORIES } from "@/data/portfolioData";
 import { Search, Code2, Sparkles, Star } from "lucide-react";
+import ScrollReveal from "@/components/ScrollReveal";
 
 export default function SkillsMatrix() {
   const [searchTerm, setSearchTerm] = useState("");
@@ -27,67 +28,71 @@ export default function SkillsMatrix() {
     <section id="skills" className="py-24 relative bg-[#090d16] border-t border-slate-800/80">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
-          <div className="max-w-2xl space-y-3">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-950/40 border border-cyan-800/40 text-cyan-300 text-xs font-mono">
-              <Code2 className="w-3.5 h-3.5" />
-              <span>Full-Stack & AI Toolkit</span>
+        <ScrollReveal>
+          <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
+            <div className="max-w-2xl space-y-3">
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-950/40 border border-cyan-800/40 text-cyan-300 text-xs font-mono">
+                <Code2 className="w-3.5 h-3.5" />
+                <span>Full-Stack & AI Toolkit</span>
+              </div>
+              <h2 className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
+                Technical Arsenal & Specializations
+              </h2>
+              <p className="text-sm text-slate-400">
+                Battle-tested tools and frameworks utilized across 5 years of enterprise delivery.
+              </p>
             </div>
-            <h2 className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
-              Technical Arsenal & Specializations
-            </h2>
-            <p className="text-sm text-slate-400">
-              Battle-tested tools and frameworks utilized across 5 years of enterprise delivery.
-            </p>
-          </div>
 
-          {/* Search Box */}
-          <div className="relative w-full md:w-72">
-            <Search className="w-4 h-4 text-slate-500 absolute left-3.5 top-3" />
-            <input
-              type="text"
-              placeholder="Search skill (e.g. LangGraph)..."
-              value={searchTerm}
-              onChange={(e) => setSearchTerm(e.target.value)}
-              className="w-full pl-10 pr-4 py-2 rounded-xl bg-slate-900 border border-slate-800 text-xs text-slate-200 placeholder:text-slate-600 focus:outline-none focus:border-cyan-400 transition-colors"
-            />
+            {/* Search Box */}
+            <div className="relative w-full md:w-72">
+              <Search className="w-4 h-4 text-slate-500 absolute left-3.5 top-3" />
+              <input
+                type="text"
+                placeholder="Search skill (e.g. LangGraph)..."
+                value={searchTerm}
+                onChange={(e) => setSearchTerm(e.target.value)}
+                className="w-full pl-10 pr-4 py-2 rounded-xl bg-slate-900 border border-slate-800 text-xs text-slate-200 placeholder:text-slate-600 focus:outline-none focus:border-cyan-400 transition-colors"
+              />
+            </div>
           </div>
-        </div>
+        </ScrollReveal>
 
         {/* Category Pills */}
-        <div className="flex flex-wrap gap-2 mb-10">
-          <button
-            onClick={() => setSelectedCategory("all")}
-            className={`px-3.5 py-1.5 rounded-lg text-xs font-mono transition-colors cursor-pointer ${
-              selectedCategory === "all"
-                ? "bg-cyan-500/20 text-cyan-300 border border-cyan-500/40 font-semibold"
-                : "bg-slate-900 text-slate-400 border border-slate-800 hover:text-white"
-            }`}
-          >
-            All Categories
-          </button>
-          {SKILL_CATEGORIES.map((cat) => (
+        <ScrollReveal delay={100}>
+          <div className="flex flex-wrap gap-2 mb-10">
             <button
-              key={cat.category}
-              onClick={() => setSelectedCategory(cat.category)}
+              onClick={() => setSelectedCategory("all")}
               className={`px-3.5 py-1.5 rounded-lg text-xs font-mono transition-colors cursor-pointer ${
-                selectedCategory === cat.category
+                selectedCategory === "all"
                   ? "bg-cyan-500/20 text-cyan-300 border border-cyan-500/40 font-semibold"
                   : "bg-slate-900 text-slate-400 border border-slate-800 hover:text-white"
               }`}
             >
-              {cat.category}
+              All Categories
             </button>
-          ))}
-        </div>
+            {SKILL_CATEGORIES.map((cat) => (
+              <button
+                key={cat.category}
+                onClick={() => setSelectedCategory(cat.category)}
+                className={`px-3.5 py-1.5 rounded-lg text-xs font-mono transition-colors cursor-pointer ${
+                  selectedCategory === cat.category
+                    ? "bg-cyan-500/20 text-cyan-300 border border-cyan-500/40 font-semibold"
+                    : "bg-slate-900 text-slate-400 border border-slate-800 hover:text-white"
+                }`}
+              >
+                {cat.category}
+              </button>
+            ))}
+          </div>
+        </ScrollReveal>
 
         {/* Categories Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          {filteredCategories.map((cat) => (
-            <div
-              key={cat.category}
-              className="p-6 rounded-2xl bg-[#0c101c] border border-slate-800/80 hover:border-slate-700 transition-colors space-y-4"
-            >
+          {filteredCategories.map((cat, index) => (
+            <ScrollReveal key={cat.category} delay={index * 80} distance={20} className="h-full">
+              <div
+                className="p-6 rounded-2xl bg-[#0c101c] border border-slate-800/80 hover:border-slate-700 transition-colors space-y-4 h-full"
+              >
               <div>
                 <h3 className="text-base font-bold text-white flex items-center justify-between">
                   <span>{cat.category}</span>
@@ -118,7 +123,8 @@ export default function SkillsMatrix() {
                 ))}
               </div>
             </div>
-          ))}
+          </ScrollReveal>
+        ))}
         </div>
       </div>
     </section>
