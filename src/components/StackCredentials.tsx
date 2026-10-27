@@ -47,10 +47,10 @@ export default function StackCredentials() {
           <div className="lg:col-span-6 space-y-6">
             <ScrollReveal>
               <div>
-                <h2 className="text-xl sm:text-2xl font-extrabold text-white tracking-tight">
+                <h2 className="text-xl sm:text-2xl font-extrabold text-slate-900 dark:text-white tracking-tight">
                   Stack
                 </h2>
-                <p className="text-xs sm:text-sm text-slate-400 mt-1">
+                <p className="text-xs sm:text-sm text-slate-500 dark:text-slate-400 mt-1">
                   Production tools and technologies used across enterprise deployments.
                 </p>
               </div>
@@ -58,10 +58,10 @@ export default function StackCredentials() {
               <div className="space-y-4 pt-4">
                 {STACK_GROUPS.map((group) => (
                   <div key={group.category}>
-                    <h3 className="text-xs font-semibold text-slate-300">
+                    <h3 className="text-xs font-semibold text-slate-700 dark:text-slate-300">
                       {group.category}
                     </h3>
-                    <p className="text-xs sm:text-sm text-slate-400 leading-relaxed mt-0.5">
+                    <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-400 leading-relaxed mt-0.5">
                       {group.tools.join(" · ")}
                     </p>
                   </div>
@@ -74,10 +74,10 @@ export default function StackCredentials() {
           <div className="lg:col-span-6 space-y-6">
             <ScrollReveal delay={60}>
               <div>
-                <h2 className="text-xl sm:text-2xl font-extrabold text-white tracking-tight">
+                <h2 className="text-xl sm:text-2xl font-extrabold text-slate-900 dark:text-white tracking-tight">
                   Credentials
                 </h2>
-                <p className="text-xs sm:text-sm text-slate-400 mt-1">
+                <p className="text-xs sm:text-sm text-slate-500 dark:text-slate-400 mt-1">
                   Industry certifications, Accenture delivery awards, and education.
                 </p>
               </div>
@@ -85,7 +85,7 @@ export default function StackCredentials() {
               <div className="space-y-5 pt-4">
                 {/* 4 Industry Certifications */}
                 <div className="space-y-2">
-                  <h3 className="text-xs font-semibold text-slate-300">
+                  <h3 className="text-xs font-semibold text-slate-700 dark:text-slate-300">
                     Certifications
                   </h3>
                   <div className="space-y-1.5">
@@ -94,8 +94,8 @@ export default function StackCredentials() {
                         key={cert.name}
                         className="flex flex-col sm:flex-row sm:items-center justify-between gap-1 text-xs sm:text-sm"
                       >
-                        <span className="font-medium text-slate-200">{cert.name}</span>
-                        <span className="text-slate-400 text-xs shrink-0">{cert.issuer}</span>
+                        <span className="font-medium text-slate-800 dark:text-slate-200">{cert.name}</span>
+                        <span className="text-slate-500 dark:text-slate-400 text-xs shrink-0">{cert.issuer}</span>
                       </div>
                     ))}
                   </div>
@@ -103,7 +103,7 @@ export default function StackCredentials() {
 
                 {/* 3 Accenture Awards */}
                 <div className="space-y-2">
-                  <h3 className="text-xs font-semibold text-slate-300">
+                  <h3 className="text-xs font-semibold text-slate-700 dark:text-slate-300">
                     Accenture Awards
                   </h3>
                   <div className="space-y-1.5">
@@ -112,8 +112,8 @@ export default function StackCredentials() {
                         key={award.name}
                         className="flex flex-col sm:flex-row sm:items-center justify-between gap-1 text-xs sm:text-sm"
                       >
-                        <span className="font-medium text-slate-200">{award.name}</span>
-                        <span className="text-slate-400 text-xs shrink-0">{award.date}</span>
+                        <span className="font-medium text-slate-800 dark:text-slate-200">{award.name}</span>
+                        <span className="text-slate-500 dark:text-slate-400 text-xs shrink-0">{award.date}</span>
                       </div>
                     ))}
                   </div>
@@ -121,11 +121,11 @@ export default function StackCredentials() {
 
                 {/* Education (One Line) */}
                 <div className="space-y-1 pt-1">
-                  <h3 className="text-xs font-semibold text-slate-300">
+                  <h3 className="text-xs font-semibold text-slate-700 dark:text-slate-300">
                     Education
                   </h3>
-                  <p className="text-xs sm:text-sm text-slate-400 leading-relaxed">
-                    <span className="text-slate-200 font-medium">B.Tech in Computer Science & Engineering</span> · Galgotias University (2017 - 2021)
+                  <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
+                    <span className="text-slate-800 dark:text-slate-200 font-medium">B.Tech in Computer Science & Engineering</span> · Galgotias University (2017 - 2021)
                   </p>
                 </div>
               </div>

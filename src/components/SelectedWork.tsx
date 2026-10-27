@@ -67,10 +67,10 @@ export default function SelectedWork() {
         {/* Section Header */}
         <ScrollReveal>
           <div className="mb-8 sm:mb-10">
-            <h2 className="text-2xl sm:text-3xl font-extrabold text-white tracking-tight">
+            <h2 className="text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white tracking-tight">
               Selected Work
             </h2>
-            <p className="text-sm sm:text-base text-slate-300 mt-2 max-w-2xl leading-relaxed">
+            <p className="text-sm sm:text-base text-slate-600 dark:text-slate-300 mt-2 max-w-2xl leading-relaxed">
               Production multi-agent systems, real-time event streaming pipelines, and frontend architecture at Accenture.
             </p>
           </div>
@@ -82,36 +82,36 @@ export default function SelectedWork() {
             <ScrollReveal key={item.slug} delay={index * 60}>
               <article
                 data-ui="case-card"
-                className="group p-5 sm:p-6 rounded-xl bg-[#0c101a] border border-white/10 hover:border-slate-700 transition-colors"
+                className="group p-5 sm:p-6 rounded-xl bg-white dark:bg-[#0c101a] border border-slate-200 dark:border-white/10 hover:border-slate-300 dark:hover:border-slate-700 transition-colors"
               >
                 {/* Meta line: Role · Dates */}
-                <div className="flex flex-wrap items-center gap-2 text-xs text-slate-400">
+                <div className="flex flex-wrap items-center gap-2 text-xs text-slate-500 dark:text-slate-400">
                   <span>{item.role}</span>
-                  <span className="text-slate-600">·</span>
+                  <span className="text-slate-400 dark:text-slate-600">·</span>
                   <span>{item.dates}</span>
                 </div>
 
-                {/* Title: Pure white by default, accent on hover/focus */}
-                <h3 className="text-base sm:text-lg font-bold text-white tracking-tight leading-snug group-hover:text-cyan-400 group-focus-within:text-cyan-400 transition-colors mt-2 mb-2">
-                  <Link href={`/work/${item.slug}`} className="text-white hover:text-cyan-400 focus:text-cyan-400 transition-colors">
+                {/* Title: Pure white on dark, dark slate on light, accent on hover/focus */}
+                <h3 className="text-base sm:text-lg font-bold text-slate-900 dark:text-white tracking-tight leading-snug group-hover:text-sky-700 dark:group-hover:text-cyan-400 group-focus-within:text-sky-700 dark:group-focus-within:text-cyan-400 transition-colors mt-2 mb-2">
+                  <Link href={`/work/${item.slug}`} className="text-slate-900 dark:text-white hover:text-sky-700 dark:hover:text-cyan-400 focus:text-sky-700 dark:focus:text-cyan-400 transition-colors">
                     {item.title}
                   </Link>
                 </h3>
 
                 {/* Summary */}
-                <p className="text-xs sm:text-sm text-slate-300 leading-relaxed max-w-3xl mb-4">
+                <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed max-w-3xl mb-4">
                   {item.summary}
                 </p>
 
                 {/* Horizontal row below summary: Exactly 2 metrics + Stack + Link */}
-                <div data-ui="card-metrics" className="pt-3.5 border-t border-white/10 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+                <div data-ui="card-metrics" className="pt-3.5 border-t border-slate-200 dark:border-white/10 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
                   <div className="flex items-center gap-8">
                     {item.metrics.map((metric) => (
                       <div key={metric.label}>
-                        <div className="text-base sm:text-lg font-extrabold text-white tracking-tight">
+                        <div className="text-base sm:text-lg font-extrabold text-slate-900 dark:text-white tracking-tight">
                           {metric.value}
                         </div>
-                        <div className="text-xs text-slate-400 mt-0.5">
+                        <div className="text-xs text-slate-500 dark:text-slate-400 mt-0.5">
                           {metric.label}
                         </div>
                       </div>
@@ -123,7 +123,7 @@ export default function SelectedWork() {
                       {item.stack.slice(0, 4).map((tech) => (
                         <span
                           key={tech}
-                          className="px-2 py-0.5 rounded-md text-xs font-medium text-slate-300 bg-slate-900/80 border border-white/5"
+                          className="px-2 py-0.5 rounded-md text-xs font-medium text-slate-700 dark:text-slate-300 bg-slate-100 dark:bg-slate-900/80 border border-slate-200 dark:border-white/5"
                         >
                           {tech}
                         </span>
@@ -132,7 +132,7 @@ export default function SelectedWork() {
 
                     <Link
                       href={`/work/${item.slug}`}
-                      className="inline-flex items-center gap-1.5 text-xs sm:text-sm font-semibold text-cyan-400 hover:text-cyan-300 transition-colors group-hover:translate-x-0.5 cursor-pointer shrink-0"
+                      className="inline-flex items-center gap-1.5 text-xs sm:text-sm font-semibold text-sky-700 dark:text-cyan-400 hover:text-sky-800 dark:hover:text-cyan-300 transition-colors group-hover:translate-x-0.5 cursor-pointer shrink-0"
                     >
                       <span>Read case study</span>
                       <ArrowRight className="w-3.5 h-3.5" />

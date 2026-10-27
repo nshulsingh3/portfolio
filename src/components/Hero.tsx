@@ -16,13 +16,13 @@ export default function Hero({ onOpenResume }: HeroProps) {
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="space-y-6">
           {/* Main Headline (2-line display title, rendered directly for optimal LCP) */}
-          <h1 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white leading-[1.1] sm:leading-[1.08] break-words">
+          <h1 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-slate-900 dark:text-white leading-[1.1] sm:leading-[1.08] break-words">
             Senior Full-Stack &<br />
             Agentic AI Engineer.
           </h1>
 
           {/* Subtext (Factual, calm, exactly as specified) */}
-          <p className="text-base sm:text-lg text-slate-300 max-w-2xl leading-relaxed">
+          <p className="text-base sm:text-lg text-slate-600 dark:text-slate-300 max-w-2xl leading-relaxed">
             5 years at Accenture building multi-agent systems, real-time WebSocket pipelines and enterprise React apps.
           </p>
 
@@ -32,7 +32,7 @@ export default function Hero({ onOpenResume }: HeroProps) {
               href="/api/download-resume"
               download="Anshul_Singh_Resume.pdf"
               onClick={(e) => downloadResumeFile(e)}
-              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-md text-sm font-semibold text-slate-950 bg-cyan-400 hover:bg-cyan-300 transition-colors cursor-pointer"
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-md text-sm font-semibold text-white dark:text-slate-950 bg-sky-700 hover:bg-sky-800 dark:bg-cyan-400 dark:hover:bg-cyan-300 transition-colors cursor-pointer"
             >
               <Download className="w-4 h-4" />
               <span>Download CV</span>
@@ -42,31 +42,31 @@ export default function Hero({ onOpenResume }: HeroProps) {
               href={PERSONAL_INFO.calCom}
               target="_blank"
               rel="noreferrer"
-              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-md text-sm font-medium text-slate-200 bg-[#0c101a] hover:bg-[#111726] border border-white/10 hover:border-slate-600 transition-colors cursor-pointer"
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-md text-sm font-medium text-slate-800 dark:text-slate-200 bg-white dark:bg-[#0c101a] hover:bg-slate-100 dark:hover:bg-[#111726] border border-slate-300 dark:border-white/10 hover:border-slate-400 dark:hover:border-slate-600 transition-colors cursor-pointer"
             >
-              <Calendar className="w-4 h-4 text-cyan-400" />
+              <Calendar className="w-4 h-4 text-sky-700 dark:text-cyan-400" />
               <span>Book a call</span>
-              <ArrowUpRight className="w-4 h-4 text-slate-400" />
+              <ArrowUpRight className="w-4 h-4 text-slate-500 dark:text-slate-400" />
             </a>
           </div>
 
           {/* Proof Strip of 4 (Metrics appear ONLY here in the Hero) */}
-          <div data-ui="proof" className="grid grid-cols-2 sm:grid-cols-4 gap-6 sm:gap-8 pt-8 mt-6 border-t border-white/10">
+          <div data-ui="proof" className="grid grid-cols-2 sm:grid-cols-4 gap-6 sm:gap-8 pt-8 mt-6 border-t border-slate-200 dark:border-white/10">
             <div>
-              <div className="text-2xl sm:text-3xl font-extrabold text-white tracking-tight">50%</div>
-              <div className="text-xs sm:text-sm text-slate-400 mt-1">API traffic cut</div>
+              <div className="text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white tracking-tight">50%</div>
+              <div className="text-xs sm:text-sm text-slate-500 dark:text-slate-400 mt-1">API traffic cut</div>
             </div>
             <div>
-              <div className="text-2xl sm:text-3xl font-extrabold text-white tracking-tight">&lt;150ms</div>
-              <div className="text-xs sm:text-sm text-slate-400 mt-1">Streaming latency</div>
+              <div className="text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white tracking-tight">&lt;150ms</div>
+              <div className="text-xs sm:text-sm text-slate-500 dark:text-slate-400 mt-1">Streaming latency</div>
             </div>
             <div>
-              <div className="text-2xl sm:text-3xl font-extrabold text-white tracking-tight">75%</div>
-              <div className="text-xs sm:text-sm text-slate-400 mt-1">Faster deploys</div>
+              <div className="text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white tracking-tight">75%</div>
+              <div className="text-xs sm:text-sm text-slate-500 dark:text-slate-400 mt-1">Faster deploys</div>
             </div>
             <div>
-              <div className="text-2xl sm:text-3xl font-extrabold text-white tracking-tight">3x</div>
-              <div className="text-xs sm:text-sm text-slate-400 mt-1">Accenture awards</div>
+              <div className="text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white tracking-tight">3x</div>
+              <div className="text-xs sm:text-sm text-slate-500 dark:text-slate-400 mt-1">Accenture awards</div>
             </div>
           </div>
         </div>

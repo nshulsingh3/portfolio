@@ -5,6 +5,7 @@ import { usePathname } from "next/navigation";
 import { PERSONAL_INFO } from "@/data/portfolioData";
 import { Terminal, Menu, X, ArrowUpRight, Download } from "lucide-react";
 import { downloadResumeFile } from "@/utils/downloadResume";
+import ThemeToggle from "@/components/ThemeToggle";
 
 interface NavbarProps {
   onOpenResume?: () => void;
@@ -40,17 +41,17 @@ export default function Navbar({ onOpenResume, onOpenWaitlist }: NavbarProps) {
         data-ui="navbar"
         className={`fixed top-0 left-0 right-0 z-50 backdrop-blur transition-colors duration-200 ${/* taste-skill-ignore */ ""} ${
           scrolled
-            ? "bg-[#07090e]/95 border-b border-white/10"
-            : "bg-[#07090e]/80 border-b border-transparent"
+            ? "bg-white/95 dark:bg-[#07090e]/95 border-b border-slate-200/80 dark:border-white/10"
+            : "bg-slate-50/80 dark:bg-[#07090e]/80 border-b border-transparent"
         }`}
       >
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
           {/* Left: Authoritative Brand Mark (left-aligned with headline) */}
           <a href={getHref("#top")} className="flex items-center gap-2.5 group">
-            <div className="w-8 h-8 rounded-md bg-slate-900 border border-slate-700/80 flex items-center justify-center text-cyan-400 group-hover:border-cyan-400 transition-colors">
-              <Terminal className="w-4 h-4 text-cyan-400" />
+            <div className="w-8 h-8 rounded-md bg-slate-100 dark:bg-slate-900 border border-slate-300 dark:border-slate-700/80 flex items-center justify-center text-sky-700 dark:text-cyan-400 group-hover:border-sky-700 dark:group-hover:border-cyan-400 transition-colors">
+              <Terminal className="w-4 h-4 text-sky-700 dark:text-cyan-400" />
             </div>
-            <span className="font-bold text-white text-sm sm:text-base tracking-tight group-hover:text-cyan-400 transition-colors">
+            <span className="font-bold text-slate-900 dark:text-white text-sm sm:text-base tracking-tight group-hover:text-sky-700 dark:group-hover:text-cyan-400 transition-colors">
               {PERSONAL_INFO.name}
             </span>
           </a>
@@ -61,20 +62,22 @@ export default function Navbar({ onOpenResume, onOpenWaitlist }: NavbarProps) {
               <a
                 key={link.label}
                 href={link.href}
-                className="text-slate-300 hover:text-white transition-colors"
+                className="text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white transition-colors"
               >
                 {link.label}
               </a>
             ))}
           </nav>
 
-          {/* Right: Direct Actions (Secondary outline button + Ghost Resume link) */}
-          <div className="flex items-center gap-4">
+          {/* Right: Direct Actions (Theme Toggle + Outline button + Ghost Resume link) */}
+          <div className="flex items-center gap-3 sm:gap-4">
+            <ThemeToggle className="hidden sm:flex" />
+
             <a
               href="/api/download-resume"
               download="Anshul_Singh_Resume.pdf"
               onClick={(e) => downloadResumeFile(e)}
-              className="hidden sm:inline-flex items-center text-xs font-medium text-slate-300 hover:text-white transition-colors cursor-pointer"
+              className="hidden sm:inline-flex items-center text-xs font-medium text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white transition-colors cursor-pointer"
               title="Download Anshul Singh Resume (PDF)"
             >
               Resume
@@ -84,16 +87,16 @@ export default function Navbar({ onOpenResume, onOpenWaitlist }: NavbarProps) {
               href={PERSONAL_INFO.calCom}
               target="_blank"
               rel="noreferrer"
-              className="hidden md:inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-md text-xs font-medium text-slate-200 bg-[#0c101a] hover:bg-[#111726] border border-white/10 hover:border-slate-600 transition-colors cursor-pointer"
+              className="hidden md:inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-md text-xs font-medium text-slate-800 dark:text-slate-200 bg-white dark:bg-[#0c101a] hover:bg-slate-100 dark:hover:bg-[#111726] border border-slate-300 dark:border-white/10 hover:border-slate-400 dark:hover:border-slate-600 transition-colors cursor-pointer"
             >
               <span>Book a call</span>
-              <ArrowUpRight className="w-3.5 h-3.5 text-slate-400" />
+              <ArrowUpRight className="w-3.5 h-3.5 text-slate-500 dark:text-slate-400" />
             </a>
 
             {/* Mobile Menu Toggle Button */}
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="md:hidden p-2 rounded-md text-slate-400 hover:text-white bg-slate-900 border border-slate-800"
+              className="md:hidden p-2 rounded-md text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white bg-white dark:bg-slate-900 border border-slate-300 dark:border-slate-800"
               aria-label="Toggle navigation"
             >
               {mobileMenuOpen ? <X className="w-4 h-4" /> : <Menu className="w-4 h-4" />}
@@ -103,14 +106,14 @@ export default function Navbar({ onOpenResume, onOpenWaitlist }: NavbarProps) {
 
         {/* Mobile Drawer (When Open) */}
         {mobileMenuOpen && (
-          <div data-ui="mobile-menu" className="md:hidden border-t border-white/10 bg-[#07090e] px-4 py-4 space-y-3">
+          <div data-ui="mobile-menu" className="md:hidden border-t border-slate-200 dark:border-white/10 bg-white dark:bg-[#07090e] px-4 py-4 space-y-3">
             <div className="flex flex-col space-y-1">
               {navLinks.map((link) => (
                 <a
                   key={link.label}
                   href={link.href}
                   onClick={() => setMobileMenuOpen(false)}
-                  className="px-3 py-2 rounded-md text-sm font-medium text-slate-300 hover:text-white hover:bg-slate-900 transition-colors"
+                  className="px-3 py-2 rounded-md text-sm font-medium text-slate-700 dark:text-slate-300 hover:text-slate-950 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-slate-900 transition-colors"
                 >
                   {link.label}
                 </a>
@@ -118,6 +121,11 @@ export default function Navbar({ onOpenResume, onOpenWaitlist }: NavbarProps) {
             </div>
 
             <div className="pt-2 flex flex-col gap-2">
+              <div className="flex items-center justify-between px-3 py-1">
+                <span className="text-xs font-medium text-slate-600 dark:text-slate-400">Theme</span>
+                <ThemeToggle />
+              </div>
+
               <a
                 href="/api/download-resume"
                 download="Anshul_Singh_Resume.pdf"
@@ -125,9 +133,9 @@ export default function Navbar({ onOpenResume, onOpenWaitlist }: NavbarProps) {
                   setMobileMenuOpen(false);
                   downloadResumeFile(e);
                 }}
-                className="w-full flex items-center justify-center gap-1.5 px-4 py-2 rounded-md text-xs font-medium text-slate-300 hover:text-white hover:bg-slate-900 transition-colors cursor-pointer"
+                className="w-full flex items-center justify-center gap-1.5 px-4 py-2 rounded-md text-xs font-medium text-slate-700 dark:text-slate-300 hover:text-slate-950 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-slate-900 transition-colors cursor-pointer"
               >
-                <Download className="w-3.5 h-3.5 text-cyan-400" />
+                <Download className="w-3.5 h-3.5 text-sky-700 dark:text-cyan-400" />
                 <span>Resume (PDF)</span>
               </a>
               <a
@@ -135,10 +143,10 @@ export default function Navbar({ onOpenResume, onOpenWaitlist }: NavbarProps) {
                 target="_blank"
                 rel="noreferrer"
                 onClick={() => setMobileMenuOpen(false)}
-                className="w-full flex items-center justify-center gap-1.5 px-4 py-2 rounded-md text-xs font-medium text-slate-200 bg-[#0c101a] hover:bg-[#111726] border border-white/10 hover:border-slate-600 transition-colors"
+                className="w-full flex items-center justify-center gap-1.5 px-4 py-2 rounded-md text-xs font-medium text-slate-800 dark:text-slate-200 bg-white dark:bg-[#0c101a] hover:bg-slate-100 dark:hover:bg-[#111726] border border-slate-300 dark:border-white/10 hover:border-slate-400 dark:hover:border-slate-600 transition-colors"
               >
                 <span>Book a call</span>
-                <ArrowUpRight className="w-3.5 h-3.5 text-slate-400" />
+                <ArrowUpRight className="w-3.5 h-3.5 text-slate-500 dark:text-slate-400" />
               </a>
             </div>
           </div>

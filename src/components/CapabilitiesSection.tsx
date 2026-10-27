@@ -44,10 +44,10 @@ export default function CapabilitiesSection() {
           {/* Left Column: Heading, Context, and Subpage Link (sticky on desktop only) */}
           <div className="lg:col-span-5 lg:sticky lg:top-24 space-y-4">
             <ScrollReveal>
-              <h2 className="text-2xl sm:text-3xl font-extrabold text-white tracking-tight">
+              <h2 className="text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white tracking-tight">
                 What I Build
               </h2>
-              <p className="text-sm sm:text-base text-slate-300 mt-2 leading-relaxed">
+              <p className="text-sm sm:text-base text-slate-600 dark:text-slate-300 mt-2 leading-relaxed">
                 Three areas I've shipped in production at Accenture.
               </p>
 
@@ -55,7 +55,7 @@ export default function CapabilitiesSection() {
               <div className="pt-2">
                 <Link
                   href="/services"
-                  className="inline-flex items-center gap-1.5 text-xs sm:text-sm font-semibold text-cyan-400 hover:text-cyan-300 transition-colors group cursor-pointer"
+                  className="inline-flex items-center gap-1.5 text-xs sm:text-sm font-semibold text-sky-700 dark:text-cyan-400 hover:text-sky-800 dark:hover:text-cyan-300 transition-colors group cursor-pointer"
                 >
                   <span>Full service details</span>
                   <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform" />
@@ -70,19 +70,19 @@ export default function CapabilitiesSection() {
               <ScrollReveal key={cap.title} delay={index * 60}>
                 <div
                   data-ui="capability-card"
-                  className="p-5 sm:p-6 rounded-xl bg-[#0c101a] border border-white/10 hover:border-slate-700 transition-colors"
+                  className="p-5 sm:p-6 rounded-xl bg-white dark:bg-[#0c101a] border border-slate-200 dark:border-white/10 hover:border-slate-300 dark:hover:border-slate-700 transition-colors"
                 >
-                  <h3 className="text-base sm:text-lg font-bold text-white tracking-tight">
+                  <h3 className="text-base sm:text-lg font-bold text-slate-900 dark:text-white tracking-tight">
                     {cap.title}
                   </h3>
-                  <p className="text-xs sm:text-sm text-slate-300 leading-relaxed mt-1.5 mb-3.5">
+                  <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed mt-1.5 mb-3.5">
                     {cap.description}
                   </p>
                   <div className="flex flex-wrap gap-1.5">
                     {cap.tools.map((tool) => (
                       <span
                         key={tool}
-                        className="px-2.5 py-1 rounded-md text-xs font-medium text-slate-300 bg-slate-900/80 border border-white/5"
+                        className="px-2.5 py-1 rounded-md text-xs font-medium text-slate-700 dark:text-slate-300 bg-slate-100 dark:bg-slate-900/80 border border-slate-200 dark:border-white/5"
                       >
                         {tool}
                       </span>
